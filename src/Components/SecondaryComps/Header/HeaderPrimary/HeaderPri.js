@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Style } from "./HeaderStyle";
+import { Style } from "./HeaderPriStyle";
 
-export default function Header() {
+export default function HeaderPri() {
   return (
     <Style>
       <div className="nav-bar container flex-x align-center ">

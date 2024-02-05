@@ -47,6 +47,11 @@ img {
   max-width: 1500px;
   margin: 0 auto;
 }
+.sec-container{
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 22px;
+}
 
 .bg-y {
   background-color: yellow;
@@ -404,9 +409,14 @@ img {
 /* ************* */
 /* margin-left  */
 .m-l-5 {
-  margin-bottom: 5px;
+  margin-left: 5px;
 }
-
+.m-l-10 {
+  margin-left: 10px;
+}
+.m-l-15 {
+  margin-left: 15px;
+}
 /*/ ///////////// 100% ///////////////*/
 .h100 {
   height: 100%;

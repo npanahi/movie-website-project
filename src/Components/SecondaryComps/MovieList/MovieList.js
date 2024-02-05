@@ -12,7 +12,7 @@ export default function MovieList({ className }) {
   async function getApi() {
     try {
       const res = await api.get(
-        "discover/tv?include_adult=false&language=en-US&page=1&sort_by=vote_average.desc&vote_count.gte=200"
+        "discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=vote_average.desc&without_genres=99,10755&vote_count.gte=200&size=1"
       );
 
       setMovies(res.data);
@@ -24,18 +24,18 @@ export default function MovieList({ className }) {
   function renderFarm() {
     if (movies === null) return "";
     return movies.results
-      .slice(1, 6)
-      .map(({ overview, name, poster_path, backdrop_path, id }, i) => {
+      .slice(6, 11)
+      .map(({ overview, name, poster_path, backdrop_path, id, title }, i) => {
         return (
           <li className="col-5">
             <div className="img-wrapper">
               {/* <img className="test" src={`${imgBase.orURL}${poster_path}`} /> */}
-              <img className="test" src={`${imgBase.wURL}${backdrop_path}`} />
+              <img className="test" src={`${imgBase.orURL}${backdrop_path}`} />
             </div>
             <div className="text-wrapper">
-              {/* <h1>{i + 1}</h1> */}
+              <h1>{i + 1}</h1>
               {/* <div>{overview}</div> */}
-              <h2>{name}</h2>
+              <h2>{name || title}</h2>
             </div>
             {/* <img src={`${imgBase.wURL}${backdrop_path}`} /> */}
           </li>
@@ -44,8 +44,8 @@ export default function MovieList({ className }) {
   }
 
   return (
-    <Style className={`container ${className}`}>
-      <div className="container">
+    <Style className={` ${className}`}>
+      <div>
         <ul>{renderFarm()}</ul>
       </div>
     </Style>
