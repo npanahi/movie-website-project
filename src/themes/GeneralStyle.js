@@ -417,6 +417,20 @@ img {
 .m-l-15 {
   margin-left: 15px;
 }
+/* ************* */
+/* margin-right  */
+
+.m-r-5 {
+  margin-right:5px;
+}
+.m-r-10 {
+  margin-right:10px;
+}
+.m-r-15 {
+  margin-right:15px;
+}
+
+
 /*/ ///////////// 100% ///////////////*/
 .h100 {
   height: 100%;
