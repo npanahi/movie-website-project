@@ -1,20 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Style } from "./HeaderSecStyle";
+import { Style } from "./HeaderTerStyle";
 import {
   faMagnifyingGlass,
   faBagShopping,
 } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "antd";
-export default function HeaderSec() {
+export default function HeaderTer() {
   return (
     <Style>
       <div className="header">
         <div className="sec-container">
           <ul className="nav-list flex-x align-center space-between">
-            <li>
-              <a href="#" target="-blank">
-                <img src="/assets/photos/header/apple-logo.svg" />
-              </a>
+            <li class="apple-logo">
+              <a href="#"></a>
             </li>
             <li>
               <a href="#">Store</a>

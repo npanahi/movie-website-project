@@ -11,6 +11,28 @@ export default function AboutUS() {
   return (
     <Style>
       <SecondaryHF>
+        <div className="sticky-header">
+          <div className="sec-container">
+            <div className="flex-wrapper flex-x space-between align-center">
+              <div className="text">Community</div>
+              <ul className="list flex-x align-center gap-25">
+                <li>
+                  <a href="#">Discover</a>
+                </li>
+                <li>
+                  <a href="#">Seek</a>
+                </li>
+                <li>
+                  <a href="#">
+                    <Button type="primary" shape="round" size="small">
+                      Register
+                    </Button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div className="description ">
           <div className="sec-container">
             <div className="description-wrapper center-text">

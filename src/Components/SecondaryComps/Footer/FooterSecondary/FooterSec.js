@@ -2,7 +2,7 @@ import { Style } from "./FooterSecStyle";
 export default function FooterSec() {
   return (
     <Style>
-      <div className="Footer">
+      <div className="footer">
         <div className="sec-container">
           <div className="footer-wrapper">
             <div className="text">

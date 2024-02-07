@@ -67,7 +67,7 @@ export const Style = styled.div`
     }
 
     .copy-right {
-      font-size: 11px;
+      font-size: 1.1rem;
       line-height: 1.36364;
       font-weight: 400;
       margin-top: 5px;

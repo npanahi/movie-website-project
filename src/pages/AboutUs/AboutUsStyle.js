@@ -16,7 +16,27 @@ export const Style = styled.div`
       font-size: 1.2rem;
     }
   }
+  /* stiky header */
+  .sticky-header {
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    .text {
+      font-size: 2.1rem;
+      font-weight: 600;
+      padding: 14px 0;
+    }
+    ul {
+      li:hover {
+        color: #0171e3;
+      }
+    }
+  }
   /* Description */
+
   .description {
     .description-wrapper {
       max-width: 70%;
@@ -113,7 +133,7 @@ export const Style = styled.div`
       .title {
         text-align: center;
         h1 {
-          font-size: 52px;
+          font-size: 5.1rem;
           line-height: 65px;
           padding-bottom: 32px;
           margin: 0;
@@ -182,7 +202,7 @@ export const Style = styled.div`
         margin: 0 auto;
       }
       h1 {
-        font-size: 52px;
+        font-size: 5.1rem;
         line-height: 65px;
         padding-bottom: 32px;
         margin: 0;

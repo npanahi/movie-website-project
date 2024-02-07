@@ -403,6 +403,9 @@ img {
 .m-b-40 {
   margin-bottom: 40px;
 }
+.m-b-50 {
+  margin-bottom: 50px;
+}
 .m-b-60 {
   margin-bottom: 60px;
 }
