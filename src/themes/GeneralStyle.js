@@ -617,7 +617,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 }
 /*/////////////// movie-list //////////////*/
-.movie-list {
+/* .movie-list {
   padding: 20px;
   background-color: #fff;
   margin-top: -55;
@@ -657,7 +657,7 @@ img {
   background-color: #e6252a;
   display: inline-block;
   transform: translateY(-50%);
-}
+} */
 /* ////////////// banner //////////// */
 .banner {
   width: 728px;

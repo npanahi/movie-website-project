@@ -16,4 +16,9 @@ export const Style = styled.div`
     margin-top: 15px;
     margin-bottom: 80px;
   }
+  .red {
+    width: 100%;
+    height: 200px;
+    background: red;
+  }
 `;

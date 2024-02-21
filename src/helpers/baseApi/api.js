@@ -5,7 +5,8 @@ const api = axios.create({
   timeout: 5000,
   headers: {
     accept: "application/json",
-    Authorization: process.env.TMDB_API_TOKEN,
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2NzVmNTVlNmJmMjhhMjY3MGNkNDE2YTU5YWUwZDFkNSIsInN1YiI6IjY1YjRmNDRkMWM2MzViMDE2MjEyZWYyYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.o0i6va-Xq17rSG5sUy4lU-LWkI3i6JdRJsCdVrEl25s",
   },
 });
 

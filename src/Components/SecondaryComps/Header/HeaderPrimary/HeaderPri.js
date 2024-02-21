@@ -3,7 +3,7 @@ import { Style } from "./HeaderPriStyle";
 
 export default function HeaderPri() {
   return (
-    <Style>
+    <Style className="header">
       <div className="nav-bar container flex-x align-center ">
         <div className="open-tv flex-x align-center gap-5 ">
           <div>

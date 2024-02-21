@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Style = styled.div`
+  background-color: red;
   ul {
     display: flex;
     gap: 10px;
