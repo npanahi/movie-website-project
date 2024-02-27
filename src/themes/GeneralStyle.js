@@ -44,7 +44,7 @@ img {
   margin: 0 auto;
 }
 .container {
-  max-width: 1500px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 .sec-container{
@@ -86,7 +86,23 @@ img {
 .ov {
   overflow: hidden;
 }
+/*//////////////// linked-text  ////////////////// */
 
+.linked-text {
+    color: #06c;
+    font-size: 1.8rem;
+    margin-top: 34px;
+    margin-right: 10px;
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .chev-r {
+      vertical-align: middle;
+      font-size: 1.2rem;
+    }
+  }
 /*//////////////// border ////////////////// */
 
 .border {

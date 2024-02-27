@@ -3,12 +3,26 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import Router from "./Components/Router";
 import { GeneralStyle } from "./themes/GeneralStyle";
+import { ConfigProvider } from "antd";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Fragment>
-    <GeneralStyle />
-    <Router />
+    <ConfigProvider
+      theme={{
+        token: {
+          // Seed Token
+          colorPrimary: "#000",
+          borderRadius: 4,
+
+          // Alias Token
+          colorBgContainer: "#fff",
+        },
+      }}
+    >
+      <GeneralStyle />
+      <Router />
+    </ConfigProvider>
   </Fragment>
 );
 

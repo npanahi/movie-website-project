@@ -1,14 +1,59 @@
+import { useEffect, useState } from "react";
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
 import MovieList from "../../Components/SecondaryComps/MovieList/MovieList";
+import timeGenerator from "../../helpers/timers/timeGenerator";
 import { Style } from "./HomeStyle";
+import api from "../../helpers/baseApi/api";
 export default function HomePage() {
+  const [movies, setMovies] = useState(null);
+  const [genres, setGenres] = useState(null);
+  useEffect(() => {
+    getMoviesApi();
+    getGenreApi();
+  }, []);
+
+  async function getMoviesApi() {
+    try {
+      const res = await api.get("trending/movie/day?language=en-US");
+      const data = res.data;
+      // console.log(data);
+      setMovies(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function getGenreApi() {
+    try {
+      const res = await api.get("genre/movie/list?language=en");
+      const data = res.data.genres;
+      // console.log(data);
+      setGenres(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  async function getUpcommingMoviesApi() {
+    try {
+      const res = await api.get("genre/movie/list?language=en");
+      const data = res.data.genres;
+      // console.log(data);
+      setGenres(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  if (movies === null || movies === undefined) return "";
+  if (genres === null || genres === undefined) return "";
   return (
     <Style>
       <PrimaryHeaderFooter>
-        <HPHero />
-        <MovieList className={"m-t-100"} />
-        <section className="featured-in">
+        {movies !== null ? <HPHero movies={movies} genres={genres} /> : ""}
+
+        <MovieList movies={movies} />
+        <MovieList movies={movies} />
+        <MovieList movies={movies} />
+        <div className="featured-in">
           <div className="logo center-text m-t-100">
             <svg
               width="157"
@@ -27,11 +72,58 @@ export default function HomePage() {
             </p>
             <div className="feature-logos center-text">
               <div>
-                <img src="/assets/photos/futered-in-logos.png" />
+                <img alt="logos" src="/assets/photos/futered-in-logos.png" />
+              </div>
+              <div className="sec-title">Watch on the go.</div>
+              <div class="linked-text">
+                <a class="m-r-10" href="#">
+                  Learn more about the Apple Support Community
+                </a>
+                <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fas"
+                  data-icon="chevron-right"
+                  class="svg-inline--fa fa-chevron-right chev-r"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 320 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+                  ></path>
+                </svg>
+              </div>
+              <div className="iphone">
+                <ul className="flex-x">
+                  <li className="col-3">
+                    <img alt="iphone" src="/assets/photos/iphone/iphone.svg" />
+                    <div className="caption">iPhone</div>
+                  </li>
+                  <li className="col-3">
+                    <img alt="ipad" src="/assets/photos/iphone/ipad.svg" />
+                    <div className="caption">iPad</div>
+                  </li>
+                  <li className="col-3">
+                    <img
+                      alt="macWindows"
+                      src="/assets/photos/iphone/macWindows.svg"
+                    />
+                    <div className="caption">Mac & Windows</div>
+                  </li>
+                  <li className="col-3">
+                    <img
+                      alt="airPlay"
+                      src="/assets/photos/iphone/airPlay.svg"
+                    />
+                    <div className="caption">AirPlay</div>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </PrimaryHeaderFooter>
     </Style>
   );
