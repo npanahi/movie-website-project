@@ -86,6 +86,7 @@ export default function HomePage() {
   }
   if (movies === null || movies === undefined) return "";
   if (genres === null || genres === undefined) return "";
+  if (nowPlayingMovies === null || nowPlayingMovies === undefined) return "";
   return (
     <Style>
       <PrimaryHeaderFooter className="footer">

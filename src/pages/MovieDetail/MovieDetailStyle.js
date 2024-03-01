@@ -37,8 +37,7 @@ export const Style = styled.div`
   .movie-reviews {
     overflow: scroll;
     width: 100%;
-    height: 500px;
-    margin-bottom: 100px;
+    max-height: 500px;
     position: relative;
     .review-title {
       text-align: start;
@@ -49,8 +48,7 @@ export const Style = styled.div`
     }
     .review-wrapper {
       align-items: center;
-      margin: 40px auto;
-      margin-top: 60px;
+      margin: 0 auto;
       border-bottom: 1px solid #cccccc;
       padding: 30px;
       .author {
@@ -120,13 +118,75 @@ export const Style = styled.div`
       }
     }
   }
+  .production-companies {
+    padding: 40px 0;
 
-  ul {
-    /* background-color: yellow; */
-    /* display: flex;
-    gap: 10px;
-    padding: 0 20px; */
-    /* padding-bottom: 30px; */
-    /* border-bottom: 1px solid #d9d9d9; */
+    ul {
+      justify-content: center;
+      gap: 50px;
+      /* padding-bottom: 40px; */
+      align-items: center;
+      .companies {
+        .img-wrapper {
+          margin-top: 5px;
+          width: 100px;
+          height: auto;
+        }
+        .text {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .details {
+    width: 100%;
+    height: auto;
+    background-color: #f3f3f3;
+    border-top: 1px solid #cccccc;
+    padding: 20px 0;
+    .overview-box {
+      background-color: #ccc;
+      border-radius: 20px;
+      padding: 10px 20px 20px 20px;
+      .over-wrapper {
+        .movie-title {
+        }
+        .movie-genre {
+          font-size: 1.2rem;
+          font-weight: 400;
+          padding-bottom: 10px;
+        }
+        .over-caption {
+          font-size: 1.3rem;
+        }
+      }
+    }
+    .info {
+      margin-top: 30px;
+      border-top: 1px solid #cccccc;
+      .title-wrapper {
+        .list {
+          .title {
+            font-weight: 700;
+            font-size: 1.3rem;
+          }
+          .text {
+            margin-top: 5px;
+            font-size: 1.2rem;
+          }
+          .badge {
+            width: 22px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+  /* vote_count */
+  .flex-box {
+    /* padding: 20px 0; */
+  }
+  .footer {
+    /* margin-top: 800px; */
   }
 `;

@@ -13,14 +13,16 @@ export default function MPHero({ movie, casts }) {
   const renderCasts = function () {
     if (casts === null || casts === undefined) return;
     if (casts.cast === null || casts.cast === undefined) return;
-    // console.log(casts);
+    const sliceEnd = 3;
     return casts.cast
-      .slice(0, 3)
+      .slice(0, sliceEnd)
       .map(({ known_for_department, profile_path, name }, i) => {
         if (known_for_department == "Acting")
           return (
             <>
-              <span className="cast-name"> {name}, </span>
+              <span className="cast-name">
+                {i !== sliceEnd - 1 ? name + ", " : name}
+              </span>
             </>
           );
       });

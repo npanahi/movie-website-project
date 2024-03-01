@@ -35,10 +35,8 @@ export default function MovieList(props) {
       <div
         className={className}
         style={{
+          ...style,
           display: "block",
-          // background: "rgba(240,240,220)",
-          borderRadius: "50%px",
-          color: "#000",
         }}
         onClick={onClick}
       />
@@ -53,8 +51,6 @@ export default function MovieList(props) {
         style={{
           ...style,
           display: "block",
-          // background: "rgba(240,240,220)",
-          borderRadius: "50%px",
         }}
         onClick={onClick}
       />
@@ -104,7 +100,7 @@ export default function MovieList(props) {
   //     cur.addEventListener("click", back);
   //   });
   // }
-
+  // if (maxDate === null || maxDate === undefined) return;
   return (
     <Style>
       <div className="container">
