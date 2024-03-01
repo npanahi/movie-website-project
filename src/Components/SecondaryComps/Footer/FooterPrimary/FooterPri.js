@@ -1,7 +1,7 @@
 import { Style } from "./FooterPriStyle";
-export default function FooterPri() {
+export default function FooterPri(props) {
   return (
-    <Style className="footer">
+    <Style className={props.className}>
       <div className="container">
         <div className="global-footer flex-x space-between">
           <div className="global-footer-left">

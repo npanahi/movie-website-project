@@ -6,7 +6,7 @@ export default function PrimaryHeaderFooter(props) {
     <>
       <HeaderPri />
       {props.children}
-      <FooterPri />
+      <FooterPri className={props.className} />
     </>
   );
 }

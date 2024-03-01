@@ -6,8 +6,9 @@ import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import MPHero from "../../Components/SecondaryComps/MoviePageHero/MPHero";
 import formatTime from "../../helpers/dateFormater/dateFormater";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 export default function MovieDetail() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -56,7 +57,7 @@ export default function MovieDetail() {
     try {
       const res = await api.get(`/movie/${id}/similar`);
       setSimilar(res.data);
-      // console.log(res.data);
+      console.log(res.data);
     } catch (e) {
       console.log(e);
     }
@@ -92,10 +93,8 @@ export default function MovieDetail() {
   };
   const renderReviews = function () {
     if (reviews === null || reviews === undefined) return "";
-    if (credits.cast === null || credits.cast === undefined) return "";
-    return reviews.results
-      .slice(0, 5)
-      .map(({ content, author, created_at, author_details }, i) => {
+    return reviews.results.map(
+      ({ content, author, created_at, author_details }, i) => {
         if ((content, author, created_at, author_details === null)) return "";
         return (
           <div className="review-wrapper col-8">
@@ -112,7 +111,7 @@ export default function MovieDetail() {
               </div>
               <div className="text">
                 <h2>A review by {author}</h2>
-                <p>
+                <p className="caption">
                   Written by {author} on {formatTime(created_at)}
                 </p>
               </div>
@@ -120,7 +119,8 @@ export default function MovieDetail() {
             <div className="content">{content}</div>
           </div>
         );
-      });
+      }
+    );
   };
   const renderSimilar = function () {
     if (similar === null || similar === undefined) return;
@@ -133,7 +133,7 @@ export default function MovieDetail() {
             <Link to={id !== newId ? `/movie/${newId}` : ""}>
               {/* <Link to={`movie/${id}`}> */}
               <img src={`${imgBase.orURL}${backdrop_path}`} />
-              <div>{title}</div>
+              <div className="title">{title}</div>
             </Link>
           </li>
         );
@@ -149,6 +149,7 @@ export default function MovieDetail() {
       );
     });
   };
+
   if (movie === null || movie === undefined) return;
   if (credits === null || credits === undefined) return;
   if (reviews === null || reviews === undefined) return;
@@ -160,31 +161,39 @@ export default function MovieDetail() {
       <PrimaryHeaderFooter>
         <MPHero movie={movie} casts={credits} />
         <div className="container">
-          <div className="movie-casts">
-            <h2>Casts</h2>
-            <ul className="casts flex-x">{renderCasts()}</ul>
-          </div>
-          <div className="movie-similar">
-            <h2>Similars</h2>
-            <ul className="similars flex-x">{renderSimilar()}</ul>
-          </div>
-          <div className="movie-gallery">
-            <h2>Gallery</h2>
-            <ul className="gallery ">{renderImages()}</ul>
-          </div>
+          {similar.results.length > 0 ? (
+            <div className="movie-similar">
+              <h2>Similars</h2>
+              <ul className="similars flex-x">{renderSimilar()}</ul>
+            </div>
+          ) : (
+            ""
+          )}
+          {credits.cast.length > 0 ? (
+            <div className="movie-casts">
+              <h2>Casts</h2>
+              <ul className="casts flex-x">{renderCasts()}</ul>
+            </div>
+          ) : (
+            ""
+          )}
+          {images.backdrops.length > 0 ? (
+            <div className="movie-gallery">
+              <h2>Gallery</h2>
+              <ul className="gallery ">{renderImages()}</ul>
+            </div>
+          ) : (
+            ""
+          )}
           {reviews.results.length > 0 ? (
             <div className="movie-reviews">
-              <h2>Reviews</h2>
+              <h2 className="review-title">People reviews</h2>
               <div className="review-box">{renderReviews()}</div>
             </div>
           ) : (
             ""
           )}
         </div>
-
-        {/* <div> {id}</div>
-          <div> {movie.title}</div> */}
-        {/* <img src={`${imgBase.orURL}${movie.backdrop_path}`} /> */}
       </PrimaryHeaderFooter>
     </Style>
   );

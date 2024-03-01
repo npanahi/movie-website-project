@@ -14,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#e6e6e6;
+  color: #333333;
 }
 ul , ol {
     list-style: none;
@@ -44,8 +46,9 @@ img {
   margin: 0 auto;
 }
 .container {
-  max-width: 1400px;
+  max-width: 1410px;
   margin: 0 auto;
+  padding:0 10px;
 }
 .sec-container{
   max-width: 1024px;

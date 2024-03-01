@@ -3,118 +3,96 @@ import api from "../../../helpers/baseApi/api";
 import imgBase from "../../../helpers/globalVariables/img-path/imgBasePath";
 import { Style } from "./MovieListStyle";
 import { Link } from "react-router-dom";
-import Slider, { goToSlide } from "../../../helpers/slider/slider";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Timer from "../../../helpers/timers/remainDates";
 
-export default function MovieList({ className }) {
-  const [movies, setMovies] = useState(null);
-  const [genres, setGenre] = useState(null);
-  useEffect(() => {
-    buildUI();
-  }, []);
+export default function MovieList(props) {
+  const { movies, genres, title, className, showNumber, maxDate } = props;
+  console.log(props);
 
-  async function getMoviesApi() {
-    try {
-      const res = await api.get("trending/movie/day?language=en-US");
-      const data = res.data;
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  async function getGenreApi() {
-    try {
-      const res = await api.get("genre/movie/list?language=en");
-      const data = res.data;
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  async function buildUI() {
-    let newGenres = await getGenreApi();
-    if (newGenres !== undefined) {
-      console.log(newGenres);
-      setGenre(newGenres.genres);
-    }
-    let newMovies = await getMoviesApi();
-    if (newMovies !== undefined) {
-      console.log(newMovies);
-      setMovies(newMovies);
-    }
-  }
-
-  // function calcDeposit(movies) {
-  //   if (movies === null) return "";
-  //   return movies.results
-  //     .flatMap(({ id }) => id)
-  //     .reduce((acc, cur) => acc + cur, 0);
-  // }
   function renderGenres(arr) {
     return genres.map((cur) => {
-      if (arr.includes(cur.id)) return <span>{cur.name} </span>;
+      if (arr.includes(cur.id)) return <span>{cur.name}. </span>;
     });
-    // {genres.map((cur) => {
-    //   if (genre_ids.includes(cur.id))
-    //     return <div>{cur.name}</div>;
-    // })}
   }
-  // function generateSlides() {
-  //   return movies.results.map(
-  //     (
-  //       { overview, name, poster_path, backdrop_path, id, title, genre_ids },
-  //       i
-  //     ) => {
-  //       return (
-  //         <li className="col-5">
-  //           <div className="img-wrapper">
-  //             {/* <img className="test" src={`${imgBase.orURL}${poster_path}`} /> */}
-  //             <img className="test" src={`${imgBase.orURL}${backdrop_path}`} />
-  //           </div>
-  //           <div className="text-wrapper">
-  //             <h1>{i + 1}</h1>
-  //             <Link to={`movie/${id}`}>
-  //               <h2>{name || title}</h2>
-  //             </Link>
-  //             <h2>{renderGenres(genre_ids)}</h2>
-  //           </div>
-  //           {/* <img src={`${imgBase.wURL}${backdrop_path}`} /> */}
-  //         </li>
-  //       );
-  //     }
-  //   );
-  // }
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
+
+  function SampleNextArrow(props) {
+    console.log(props);
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          display: "block",
+          // background: "rgba(240,240,220)",
+          borderRadius: "50%px",
+          color: "#000",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+          // background: "rgba(240,240,220)",
+          borderRadius: "50%px",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
   function renderFarm() {
     if (movies === null) return "";
     if (movies === undefined) return "";
-    console.log(movies);
-    return movies.results
-      .slice(0, 5)
-      .map(
-        (
-          { overview, name, poster_path, backdrop_path, id, title, genre_ids },
-          i
-        ) => {
-          return (
-            <li>
-              <div className="img-wrapper">
-                {/* <img className="test" src={`${imgBase.orURL}${poster_path}`} /> */}
+    return movies.results.map(
+      (
+        { overview, name, poster_path, backdrop_path, id, title, genre_ids },
+        i
+      ) => {
+        return (
+          <div className="list">
+            <div className="img-wrapper">
+              {/* <img className="test" src={`${imgBase.orURL}${poster_path}`} /> */}
+              <Link to={`movie/${id}`}>
                 <img
                   className="test"
                   src={`${imgBase.orURL}${backdrop_path}`}
                 />
-              </div>
-              <div className="text-wrapper">
-                {/* <h1>{i + 1}</h1> */}
+              </Link>
+            </div>
+            <div className="text-wrapper flex-x align-center gap-20">
+              {showNumber ? <h1 className="num">{i + 1}</h1> : ""}
+              <div className="title-genres">
                 <Link to={`movie/${id}`}>
                   <h2>{name || title}</h2>
                 </Link>
-                <div>{renderGenres(genre_ids)}</div>
+                <div className="genres">{renderGenres(genre_ids)}</div>
               </div>
-              {/* <img src={`${imgBase.wURL}${backdrop_path}`} /> */}
-            </li>
-          );
-        }
-      );
+            </div>
+          </div>
+        );
+      }
+    );
   }
   // function a() {
   //   const element = document.querySelectorAll("h1");
@@ -128,14 +106,19 @@ export default function MovieList({ className }) {
   // }
 
   return (
-    <Style className={`section movie-list ${className}`}>
+    <Style>
       <div className="container">
-        {/* <Slider slides={renderFarm()} /> */}
-        <h2>Top Rated</h2>
-        <div className="movie-list-wrapper">
-          <ul>{renderFarm()}</ul>
+        <div className={className}>
+          <h2>{title}</h2>
+          {maxDate ? <Timer className="m-b-10" maximumDate={maxDate} /> : ""}
+          <div className="movie-list-wrapper m-t-20">
+            <div className="slider-container">
+              <Slider {...settings} className="slider">
+                {renderFarm()}
+              </Slider>
+            </div>
+          </div>
         </div>
-        {/* <div>{genres[0].id}</div> */}
       </div>
     </Style>
   );

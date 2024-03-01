@@ -17,10 +17,11 @@ export const Style = styled.div`
     }
   }
   .text-wrapper {
+    padding: 0 10px;
     font-size: 1.3rem;
     position: absolute;
     bottom: 10%;
-    left: 2%;
+    left: 4.5%;
     color: #fff;
     width: 60%;
     .flex-box {
@@ -29,32 +30,4 @@ export const Style = styled.div`
       gap: 10px;
     }
   }
-.hero-box{
-  ul {
-    background-color: yellow;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-
-  /* IN THE END */
-  overflow: hidden;
-}
-  }
-  li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    transition: all 1s;
-  }
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-}
-  
 `;

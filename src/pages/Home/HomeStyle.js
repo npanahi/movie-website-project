@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export const Style = styled.div`
+  color: #333333;
   .featured-in {
     margin-bottom: 300px;
     .logo {
@@ -20,7 +21,7 @@ export const Style = styled.div`
       height: 160px;
       margin: 0 auto;
       margin-top: 15px;
-      margin-bottom: 80px;
+      /* margin-bottom: 80px; */
       .sec-title {
         font-size: 42px;
         font-weight: 700;
@@ -40,6 +41,7 @@ export const Style = styled.div`
         }
       }
       .iphone {
+        margin-bottom: 100px;
         ul {
           align-items: end;
           justify-content: center;
@@ -56,6 +58,27 @@ export const Style = styled.div`
         }
       }
     }
+    /* .accordions {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      /* background-color: red; */
+    /* margin-bottom: 1000px; */
+    /* .accordion {
+        /* display: inline-block; */
+    /* margin-bottom: 100px; */
+    /* background-color: red; */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* } */
+    /* }  */
+  }
+  .footer {
+    margin-top: 800px;
+  }
+  .movie-list {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 10px;
   }
   /* .red {
     width: 100%;

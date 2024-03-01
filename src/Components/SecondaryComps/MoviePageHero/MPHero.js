@@ -41,21 +41,29 @@ export default function MPHero({ movie, casts }) {
                   <a href={movie.homepage} target="blank">
                     <ButtonPrimary text="Continue" />
                   </a>
-                  <div className="col-5 grow-1">{movie.overview}</div>
-                  <div className="actores flex-y">
-                    <div className="main-actores">
-                      Main actores: {renderCasts()}
-                    </div>
-                    <div className="director">Directed by:</div>
-                  </div>
+                  <div className="">{movie.overview}</div>
                 </div>
-                <div className="flex-box bottom flex-x align-end">
-                  <ButtonPrimary text="In Next" />
-                  <div className="genres">{renderGenres(movie.genres)}</div>
-                  <div className="release_date">
-                    {movie.release_date ? movie.release_date.split("-")[0] : ""}
+                <div className="flex-box bottom flex-x align-center m-t-10 space-between">
+                  <div className="left flex-x align-center gap-10">
+                    <ButtonPrimary text="In Next" />
+                    <div className="genres">
+                      <b>{renderGenres(movie.genres)}</b>
+                    </div>
+                    <div className="release_date">
+                      {movie.release_date
+                        ? movie.release_date.split("-")[0]
+                        : ""}
+                    </div>
+                    <div>{timeGenerator(movie.runtime)}</div>
                   </div>
-                  <div>{timeGenerator(movie.runtime)}</div>
+                  <div className="right align-center">
+                    <div className="actores">
+                      <div className="main-actores ">
+                        <b>Main actores:</b> {renderCasts()}
+                      </div>
+                      {/* <div className="director">Directed by:</div> */}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 export const Style = styled.div`
+  background-color: #fff;
   /* Global */
   .linked-text {
     color: #06c;
