@@ -7,12 +7,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Timer from "../../../helpers/timers/remainDates";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 
 export default function MovieList(props) {
   const { movies, genres, title, className, showNumber, maxDate } = props;
   console.log(props);
 
   function renderGenres(arr) {
+    if (genres === null || genres === undefined) return "";
     return genres.map((cur) => {
       if (arr.includes(cur.id)) return <span>{cur.name}. </span>;
     });
@@ -65,22 +68,27 @@ export default function MovieList(props) {
         { overview, name, poster_path, backdrop_path, id, title, genre_ids },
         i
       ) => {
+        if (backdrop_path === null) return "";
         return (
           <div className="list">
-            <div className="img-wrapper">
-              {/* <img className="test" src={`${imgBase.orURL}${poster_path}`} /> */}
+            <div className="backdrop-holder">
               <Link to={`movie/${id}`}>
-                <img
-                  className="test"
-                  src={`${imgBase.orURL}${backdrop_path}`}
-                />
+                <div className="image-wrapper">
+                  <img
+                    className="shadow "
+                    src={`${imgBase.orURL}${poster_path}`}
+                  />
+                  <div className="elipsis-icon">
+                    <FontAwesomeIcon className="icon" icon={faEllipsis} />
+                  </div>
+                </div>
               </Link>
             </div>
             <div className="text-wrapper flex-x align-center gap-20">
               {showNumber ? <h1 className="num">{i + 1}</h1> : ""}
               <div className="title-genres">
                 <Link to={`movie/${id}`}>
-                  <h2>{name || title}</h2>
+                  <h2 className="title">{name || title}</h2>
                 </Link>
                 <div className="genres">{renderGenres(genre_ids)}</div>
               </div>

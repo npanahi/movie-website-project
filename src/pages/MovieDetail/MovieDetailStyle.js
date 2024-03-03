@@ -1,6 +1,7 @@
 import styled from "styled-components";
 export const Style = styled.div`
   color: #333333;
+
   .movie-casts {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 30px;
@@ -10,12 +11,12 @@ export const Style = styled.div`
       margin-bottom: 60px;
 
       li {
-        width: 150px;
+        max-width: 150px;
         height: 200px;
         text-align: center;
 
         .cast-img {
-          width: 100%;
+          max-width: 100%;
           height: 100%;
           img {
             border-radius: 10px;
@@ -55,7 +56,7 @@ export const Style = styled.div`
         gap: 40px;
         margin-bottom: 20px;
         .avatar {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
           border-radius: 50%;
           img {
@@ -88,8 +89,32 @@ export const Style = styled.div`
       gap: 10px;
 
       li {
-        width: 20%;
-        height: 171px;
+        max-width: 262px;
+        max-height: 400px;
+
+        img {
+          border-radius: 10px;
+        }
+        .title {
+          font-size: 1.3rem;
+          line-height: 1.46667;
+          font-weight: 600;
+          letter-spacing: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .movie-recommendations {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 50px;
+    .recommendations {
+      display: flex;
+      gap: 10px;
+
+      li {
+        max-width: 262px;
+        max-height: 400px;
 
         img {
           border-radius: 10px;
@@ -120,7 +145,6 @@ export const Style = styled.div`
   }
   .production-companies {
     padding: 40px 0;
-
     ul {
       justify-content: center;
       gap: 50px;
@@ -129,8 +153,11 @@ export const Style = styled.div`
       .companies {
         .img-wrapper {
           margin-top: 5px;
-          width: 100px;
+          max-width: 100px;
           height: auto;
+          img {
+            box-shadow: 0 0 0;
+          }
         }
         .text {
           font-size: 1.3rem;
@@ -175,11 +202,17 @@ export const Style = styled.div`
             font-size: 1.2rem;
           }
           .badge {
-            width: 22px;
+            max-width: 22px;
             height: auto;
           }
         }
       }
+    }
+  }
+  .imdb {
+    img {
+      max-width: 50px;
+      height: auto;
     }
   }
   /* vote_count */

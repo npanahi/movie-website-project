@@ -17,13 +17,13 @@ export const Style = styled.div`
       line-height: 1.23;
     }
     .feature-logos {
-      width: 990px;
+      width: 100%;
       height: 160px;
       margin: 0 auto;
       margin-top: 15px;
       /* margin-bottom: 80px; */
       .sec-title {
-        font-size: 42px;
+        font-size: 4.2rem;
         font-weight: 700;
       }
       .linked-text {
@@ -58,20 +58,9 @@ export const Style = styled.div`
         }
       }
     }
-    /* .accordions {
-      position: relative;
-      width: 100%;
-      height: 200px;
-      /* background-color: red; */
-    /* margin-bottom: 1000px; */
-    /* .accordion {
-        /* display: inline-block; */
-    /* margin-bottom: 100px; */
-    /* background-color: red; */
-    /* position: absolute; */
-    /* width: 100%; */
-    /* } */
-    /* }  */
+  }
+  .accordions {
+    padding: 0 250px;
   }
   .footer {
     margin-top: 800px;

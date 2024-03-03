@@ -16,8 +16,12 @@ const contentStyle = {
 };
 export default function HPHero({ movies, genres }) {
   function renderGenres(arr) {
-    return genres.map((cur) => {
-      if (arr.includes(cur.id)) return <span> {cur.name} </span>;
+    let filteredGenres = [];
+    genres.forEach((cur, i) => {
+      if (arr.includes(cur.id)) filteredGenres.push(cur.name);
+    });
+    return filteredGenres.map((cur, i) => {
+      return <span> {i !== filteredGenres.length - 1 ? cur + "," : cur} </span>;
     });
   }
   function renderFarm() {
@@ -36,12 +40,19 @@ export default function HPHero({ movies, genres }) {
               <div className="hero-wrapper relative">
                 <div className="background-wrapper">
                   <img src={`${imgBase.orURL}${backdrop_path}`} />
+                  <div className="logo">
+                    <img
+                      className="logo-img "
+                      alt="logo"
+                      src="https://is1-ssl.mzstatic.com/image/thumb/oEYYIjc6-3zT0jgpyUiIaw/1x40at.png"
+                    />
+                  </div>
                 </div>
                 <div className="container text-wrapper absolute">
                   <div className="flex-box flex-y">
-                    <h2>{title}</h2>
-                    <div className="col-5">{overview}</div>
-                    <div>{renderGenres(genre_ids)}</div>
+                    <div className="title">{title}</div>
+                    <div className="col-5 overview">{overview}</div>
+                    <div className="genres">{renderGenres(genre_ids)}</div>
                     <Link className="i-b" to={`movie/${id}`}>
                       <ButtonPrimary text="To the broadcast" />
                     </Link>

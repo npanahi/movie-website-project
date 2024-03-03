@@ -18,7 +18,8 @@ export default function MovieDetail() {
   const [similar, setSimilar] = useState(null);
   const [images, setImages] = useState(null);
   const [language, setLanguage] = useState(null);
-  const [country, setCountry] = useState(null);
+  const [recommendations, setRecommendations] = useState(null);
+
   useEffect(() => {
     getMovieApi();
     getCastApi();
@@ -26,6 +27,7 @@ export default function MovieDetail() {
     getImgGalleryApi();
     getReviewsApi();
     getLanguageApi();
+    getRecommendationsApi();
   }, [id]);
   async function getMovieApi() {
     try {
@@ -74,6 +76,15 @@ export default function MovieDetail() {
       console.log(e);
     }
   }
+  async function getRecommendationsApi() {
+    try {
+      const res = await api.get(`/movie/${id}/recommendations`);
+      setRecommendations(res.data);
+      // console.log(res.data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
   async function getLanguageApi() {
     try {
       const res = await api.get(`/configuration/languages`);
@@ -96,7 +107,10 @@ export default function MovieDetail() {
           return (
             <li>
               <div className="cast-img">
-                <img src={`${imgBase.orURL}${profile_path}`} />
+                <img
+                  className="shadow"
+                  src={`${imgBase.orURL}${profile_path}`}
+                />
               </div>
               <div className="cast-name">{name}</div>
               <div className="character">{character}</div>
@@ -139,13 +153,29 @@ export default function MovieDetail() {
     if (similar === null || similar === undefined) return;
     return similar.results
       .slice(0, 5)
-      .map(({ backdrop_path, title, id: newId }) => {
-        if (backdrop_path === null) return "";
+      .map(({ backdrop_path, title, id: newId, poster_path }) => {
+        if (poster_path === null) return "";
         return (
           <li className="col-5">
             <Link to={id !== newId ? `/movie/${newId}` : ""}>
               {/* <Link to={`movie/${id}`}> */}
-              <img src={`${imgBase.orURL}${backdrop_path}`} />
+              <img className="shadow" src={`${imgBase.orURL}${poster_path}`} />
+              <div className="title">{title}</div>
+            </Link>
+          </li>
+        );
+      });
+  };
+  const renderRecommendations = function () {
+    if (recommendations === null || recommendations === undefined) return;
+    return recommendations.results
+      .slice(0, 5)
+      .map(({ backdrop_path, title, id: newId, poster_path }) => {
+        if (poster_path === null) return "";
+        return (
+          <li className="col-5">
+            <Link to={id !== newId ? `/movie/${newId}` : ""}>
+              <img className="shadow" src={`${imgBase.orURL}${poster_path}`} />
               <div className="title">{title}</div>
             </Link>
           </li>
@@ -157,7 +187,7 @@ export default function MovieDetail() {
     return images.backdrops.slice(0, 20).map(({ file_path }) => {
       return (
         <li>
-          <img src={`${imgBase.orURL}${file_path}`} />
+          <img className="shadow" src={`${imgBase.orURL}${file_path}`} />
         </li>
       );
     });
@@ -202,6 +232,17 @@ export default function MovieDetail() {
           ) : (
             ""
           )}
+          {recommendations.results.length > 0 ? (
+            <div className="movie-recommendations">
+              <h2>Recommendations</h2>
+              <ul className="recommendations flex-x">
+                {renderRecommendations()}
+              </ul>
+            </div>
+          ) : (
+            ""
+          )}
+
           {credits.cast.length > 0 ? (
             <div className="movie-casts">
               <h2>Casts</h2>
@@ -294,13 +335,13 @@ export default function MovieDetail() {
                       <div className="title">Original title</div>
                       <div className="text">{movie.original_title}</div>
                     </li>{" "}
-                    <li className="m-b-20">
+                    <li>
                       <a
                         href={`https://www.imdb.com/title/${movie.imdb_id}`}
-                        className="title"
+                        className="imdb"
                         target="blank"
                       >
-                        imdb_id
+                        <img alt="imdb" src="/assets/photos/footer/imdb.png" />
                       </a>
                     </li>
                   </ul>

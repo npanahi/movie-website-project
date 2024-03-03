@@ -4,6 +4,7 @@ import timeGenerator from "../../../helpers/timers/timeGenerator";
 import { Style } from "./MPHeroStyle";
 
 export default function MPHero({ movie, casts }) {
+  console.log(movie);
   function renderGenres(genres) {
     if (genres === undefined) return;
     return genres.map((cur) => {
@@ -27,6 +28,9 @@ export default function MPHero({ movie, casts }) {
           );
       });
   };
+  if (casts === null || casts === undefined) return;
+  if (movie === null || movie === undefined) return;
+
   return (
     <Style className="section section-1 section-movie-hero">
       <div className="container-full m-b-10 ">
@@ -39,7 +43,7 @@ export default function MPHero({ movie, casts }) {
               <h1>{movie.title}</h1>
               <h4>{movie.tagline}</h4>
               <div className=" text-wrapper">
-                <div className="flex-box top flex-x">
+                <div className="flex-box top flex-x align-center">
                   <a href={movie.homepage} target="blank">
                     <ButtonPrimary text="Continue" />
                   </a>

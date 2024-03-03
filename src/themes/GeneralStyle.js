@@ -2,7 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 export const GeneralStyle = createGlobalStyle`
 html{
-  font-size: 62.5%;}
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
 
 * , *:after , *:before {
     box-sizing: border-box;
@@ -46,7 +48,7 @@ img {
   margin: 0 auto;
 }
 .container {
-  max-width: 1410px;
+  max-width: 1400px;
   margin: 0 auto;
   padding:0 10px;
 }
@@ -573,7 +575,9 @@ img {
 }
 /* /////////////// Shadow ///////////// */
 .shadow {
-  box-shadow: 0 7px 17px -8px rgba(0, 0, 0, 0.8);
+  /* box-shadow: 0 7px 17px -8px rgba(0, 0, 0, 0.8); */
+  box-shadow: 0 4px 7px rgba(0,0,0,.25);
+
 }
 /*//////////////// background /////////// */
 .bg-img img {
