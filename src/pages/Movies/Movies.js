@@ -3,16 +3,16 @@ import api from "../../helpers/baseApi/api";
 import { Link, useParams } from "react-router-dom";
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import { Style } from "./MoviesStyle";
-import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
 import { Pagination } from "antd";
 import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 export default function MoviesPage() {
-  const { id } = useParams();
   const [movies, setMovies] = useState(null);
   const [genres, setGenres] = useState(null);
   const [currntPage, setCurentPage] = useState(1);
-  const [metadata, setMetadata] = useState(null);
+  // const [metadata, setMetadata] = useState(null);
 
   // useEffect(() => {
   //   getMoviesApi();
@@ -40,13 +40,19 @@ export default function MoviesPage() {
     try {
       const res = await api.get("genre/movie/list?language=en");
       const data = res.data.genres;
-      // console.log(data);
+      console.log(data);
       setGenres(data);
     } catch (error) {
       console.log(error);
     }
   }
 
+  function renderGenres(arr) {
+    if (genres === null || genres === undefined) return "";
+    return genres.map((cur) => {
+      if (arr.includes(cur.id)) return <span>{cur.name}. </span>;
+    });
+  }
   const renderMovies = function () {
     if (movies === null || movies === undefined) return "";
     return movies.results.map(
@@ -55,15 +61,27 @@ export default function MoviesPage() {
         i
       ) => {
         return (
-          <li>
+          <li key={id}>
             <div className="img-wrapper">
               <Link to={`./${id}`}>
                 <img
+                  alt={title}
                   className="shadow "
                   src={`${imgBase.orURL}${poster_path}`}
                 />
-                <h2 className="title m-y-20">{title}</h2>
+                <div className="icon-wrapper">
+                  <FontAwesomeIcon className="play-icon" icon={faPlay} />
+                </div>
               </Link>
+            </div>
+            <div className="text-wrapper flex-x align-center gap-20">
+              <div className=" num ">{i + 1}</div>
+              <div className="main-text">
+                <Link to={`./${id}`}>
+                  <h2 className="title ">{title}</h2>
+                </Link>
+                <div className="genres">{renderGenres(genre_ids)}</div>
+              </div>
             </div>
           </li>
         );

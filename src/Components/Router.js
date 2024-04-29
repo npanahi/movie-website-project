@@ -5,6 +5,7 @@ import ContactUs from "../pages/ContactUs/ContactUs";
 import Error from "../pages/Error/Error";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 import MoviesPage from "../pages/Movies/Movies";
+import SearchPach from "../pages/Search/Search";
 
 export default function Router() {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ export default function Router() {
     {
       path: "/movie",
       element: <MoviesPage />,
+    },
+    {
+      path: "/Search",
+      element: <SearchPach />,
     },
     {
       path: "*",

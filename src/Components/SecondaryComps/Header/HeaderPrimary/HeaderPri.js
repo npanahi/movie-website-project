@@ -1,7 +1,10 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, NavLink } from "react-router-dom";
 import { Style } from "./HeaderPriStyle";
 
-export default function HeaderPri() {
+export default function HeaderPri(props) {
+  const onChangeLocal = function (e) {
+    props.onChange(e.target.value);
+  };
   return (
     <Style className="header">
       <div className="nav-bar container flex-x align-center ">
@@ -29,6 +32,19 @@ export default function HeaderPri() {
                 <Link to={`/movie`} target="blank">
                   Movies
                 </Link>
+                {/* <NavLink
+                  to="/movie"
+                  style={({ isActive, isPending, isTransitioning }) => {
+                    return {
+                      fontWeight: isActive ? "bold" : "",
+                      fontSize: isActive ? "3rem" : "2rem",
+                      color: isPending ? "red" : "blue",
+                      // viewTransitionName: isTransitioning ? "slide" : "",
+                    };
+                  }}
+                >
+                  Movies{" "}
+                </NavLink> */}
               </div>
             </li>
             <li>
@@ -64,14 +80,17 @@ export default function HeaderPri() {
               fill="#8d8d92"
             ></path>
           </svg>
-          <input
-            name="query"
-            placeholder="Seek"
-            autocomplete="off"
-            class="search-header__search-input"
-            id="search-header-form-input-box"
-            type="search"
-          ></input>
+          <Link to={`/search`}>
+            <input
+              name="query"
+              placeholder="Seek"
+              autocomplete="off"
+              class="search-header__search-input"
+              id="search-header-form-input-box"
+              type="search"
+              onChange={onChangeLocal}
+            ></input>
+          </Link>
           <svg
             viewBox="0 0 30 30"
             height="25"

@@ -6,10 +6,11 @@ import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import MPHero from "../../Components/SecondaryComps/MoviePageHero/MPHero";
 import formatTime from "../../helpers/dateFormater/dateFormater";
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import timeGenerator from "../../helpers/timers/timeGenerator";
+// import timeGenerator from "../../helpers/timers/timeGenerator";
+import Details from "../../Components/SecondaryComps/MovieDetails/Details/Details";
 export default function MovieDetail() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -17,97 +18,125 @@ export default function MovieDetail() {
   const [reviews, setReviews] = useState(null);
   const [similar, setSimilar] = useState(null);
   const [images, setImages] = useState(null);
-  const [language, setLanguage] = useState(null);
+  // const [language, setLanguage] = useState(null);
   const [recommendations, setRecommendations] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getMovieApi();
-    getCastApi();
+    getCreditsApi();
     getSimilarApi();
     getImgGalleryApi();
     getReviewsApi();
-    getLanguageApi();
+    // getLanguageApi();
     getRecommendationsApi();
   }, [id]);
   async function getMovieApi() {
+    setLoading(true);
     try {
       const res = await api.get(`movie/${id}`);
       setMovie(res.data);
-      console.log(res.data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-  async function getCastApi() {
-    try {
-      const res = await api.get(`/movie/${id}/credits`);
-
-      setCredits(res.data);
+      setLoading(false);
       // console.log(res.data);
     } catch (e) {
       console.log(e);
+      setLoading(false);
+    }
+  }
+  async function getCreditsApi() {
+    setLoading(true);
+
+    try {
+      const res = await api.get(`/movie/${id}/credits`);
+      setCredits(res.data);
+      setLoading(false);
+
+      // console.log(res.data);
+    } catch (e) {
+      console.log(e);
+      setLoading(false);
     }
   }
   async function getReviewsApi() {
+    setLoading(true);
+
     try {
       const res = await api.get(`/movie/${id}/reviews`);
       setReviews(res.data);
-
+      setLoading(false);
       console.log(res.data.results.length > 0);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   }
   async function getSimilarApi() {
+    setLoading(true);
     try {
       const res = await api.get(`/movie/${id}/similar`);
       setSimilar(res.data);
+      setLoading(false);
       console.log(res.data);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   }
   async function getImgGalleryApi() {
+    setLoading(true);
+
     try {
       const res = await api.get(`/movie/${id}/images`);
       setImages(res.data);
+      setLoading(false);
+
       // console.log(res.data);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   }
   async function getRecommendationsApi() {
+    setLoading(true);
+
     try {
       const res = await api.get(`/movie/${id}/recommendations`);
       setRecommendations(res.data);
+      setLoading(false);
       // console.log(res.data);
     } catch (e) {
       console.log(e);
+      setLoading(false);
     }
   }
-  async function getLanguageApi() {
-    try {
-      const res = await api.get(`/configuration/languages`);
-      setLanguage(res.data);
-      console.log(res.data);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  // async function getLanguageApi() {
+  //   setLoading(true);
 
+  //   try {
+  //     const res = await api.get(`/configuration/languages`);
+  //     setLanguage(res.data);
+  //     setLoading(false);
+  //     console.log(res.data);
+  //   } catch (e) {
+  //     console.log(e);
+  //     setLoading(false);
+  //   }
+  // }
   const renderCasts = function () {
+    console.log(credits);
     if (credits === null || credits === undefined) return;
     if (credits.cast === null || credits.cast === undefined) return;
-
+    // if (credits.cast.length === 0) return;
     return credits.cast
       .slice(0, 10)
-      .map(({ known_for_department, profile_path, name, character }, i) => {
-        if (profile_path === null) return;
+      .map(({ known_for_department, profile_path, name, character, id }, i) => {
+        if (profile_path === null || profile_path === undefined) return;
         if (known_for_department === "Acting")
           return (
-            <li>
+            <li key={id}>
               <div className="cast-img">
                 <img
+                  alt={name}
                   className="shadow"
                   src={`${imgBase.orURL}${profile_path}`}
                 />
@@ -121,10 +150,10 @@ export default function MovieDetail() {
   const renderReviews = function () {
     if (reviews === null || reviews === undefined) return "";
     return reviews.results.map(
-      ({ content, author, created_at, author_details }, i) => {
+      ({ content, author, created_at, author_details, id }, i) => {
         if ((content, author, created_at, author_details === null)) return "";
         return (
-          <div className="review-wrapper col-8">
+          <div key={id} className="review-wrapper col-8">
             <div className="author flex-x align-start">
               <div className="avatar">
                 <img
@@ -151,15 +180,19 @@ export default function MovieDetail() {
   };
   const renderSimilar = function () {
     if (similar === null || similar === undefined) return;
+    if (similar.results === null || similar.results === undefined) return;
     return similar.results
       .slice(0, 5)
       .map(({ backdrop_path, title, id: newId, poster_path }) => {
         if (poster_path === null) return "";
         return (
-          <li className="col-5">
+          <li key={newId} className="col-5">
             <Link to={id !== newId ? `/movie/${newId}` : ""}>
-              {/* <Link to={`movie/${id}`}> */}
-              <img className="shadow" src={`${imgBase.orURL}${poster_path}`} />
+              <img
+                alt={title}
+                className="shadow"
+                src={`${imgBase.orURL}${poster_path}`}
+              />
               <div className="title">{title}</div>
             </Link>
           </li>
@@ -168,14 +201,23 @@ export default function MovieDetail() {
   };
   const renderRecommendations = function () {
     if (recommendations === null || recommendations === undefined) return;
+    if (
+      recommendations.results === null ||
+      recommendations.results === undefined
+    )
+      return;
     return recommendations.results
       .slice(0, 5)
       .map(({ backdrop_path, title, id: newId, poster_path }) => {
         if (poster_path === null) return "";
         return (
-          <li className="col-5">
+          <li key={newId} className="col-5">
             <Link to={id !== newId ? `/movie/${newId}` : ""}>
-              <img className="shadow" src={`${imgBase.orURL}${poster_path}`} />
+              <img
+                alt={title}
+                className="shadow"
+                src={`${imgBase.orURL}${poster_path}`}
+              />
               <div className="title">{title}</div>
             </Link>
           </li>
@@ -184,40 +226,49 @@ export default function MovieDetail() {
   };
   const renderImages = function () {
     if (images === null || images === undefined) return;
-    return images.backdrops.slice(0, 20).map(({ file_path }) => {
+    return images.backdrops.slice(0, 20).map(({ file_path, id }) => {
       return (
-        <li>
-          <img className="shadow" src={`${imgBase.orURL}${file_path}`} />
+        <li key={id}>
+          <img
+            alt="gallery"
+            className="shadow"
+            src={`${imgBase.orURL}${file_path}`}
+          />
         </li>
       );
     });
   };
-  const renderLanguages = function () {
-    if (language === null || language === undefined) return;
-    return language.map(({ iso_639_1, english_name }) => {
-      if (iso_639_1 === movie.original_language) {
-        return <div>{english_name}</div>;
-      }
-    });
-  };
+  // const renderLanguages = function () {
+  //   if (language === null || language === undefined) return;
+  //   return language.map(({ iso_639_1, english_name, id }) => {
+  //     if (iso_639_1 === movie.original_language) {
+  //       return <div key={id}>{english_name}</div>;
+  //     }
+  //   });
+  // };
   const renderCompanies = function () {
     return movie.production_companies.map(({ logo_path, name }) => {
       if (logo_path === null || logo_path === undefined) return "";
       return (
         <li className="companies">
           <div className="img-wrapper ">
-            <img className="logo" src={`${imgBase.orURL}${logo_path}`} />{" "}
+            <img
+              alt="company"
+              className="logo"
+              src={`${imgBase.orURL}${logo_path}`}
+            />{" "}
           </div>
         </li>
       );
     });
   };
 
-  if (movie === null || movie === undefined) return;
-  if (credits === null || credits === undefined) return;
-  if (reviews === null || reviews === undefined) return;
-  if (similar === null || similar === undefined) return;
-  if (images === null || images === undefined) return;
+  if (movie === null || movie === undefined) return "";
+  if (credits === null || credits === undefined) return "";
+  if (reviews === null || reviews === undefined) return "";
+  if (similar === null || similar === undefined) return "";
+  if (similar.results === null || similar.results === undefined) return "";
+  if (images === null || images === undefined) return "";
 
   return (
     <Style>
@@ -242,7 +293,6 @@ export default function MovieDetail() {
           ) : (
             ""
           )}
-
           {credits.cast.length > 0 ? (
             <div className="movie-casts">
               <h2>Casts</h2>
@@ -277,8 +327,7 @@ export default function MovieDetail() {
         ) : (
           ""
         )}
-
-        <div className="details">
+        {/* <div className="details">
           <div className="container">
             <h2>Over</h2>
             <div className="overview-box col-4">
@@ -288,9 +337,11 @@ export default function MovieDetail() {
                 </div>
                 <div className="movie-genre">
                   {movie.genres.map((c, i) => {
-                    return i === movie.genres.length - 1
-                      ? c.name
-                      : c.name + ", ";
+                    return i === movie.genres.length - 1 ? (
+                      <span key={c.id}>{c.name}</span>
+                    ) : (
+                      <span key={c.id}>{c.name + ", "}</span>
+                    );
                   })}
                 </div>
                 <div className="over-caption">{movie.overview}</div>
@@ -309,7 +360,6 @@ export default function MovieDetail() {
                     </li>
                     <li className="m-b-20">
                       <div className="title">Run time</div>
-
                       <div className="text">{timeGenerator(movie.runtime)}</div>
                     </li>
                     <li className="m-b-20">
@@ -374,7 +424,8 @@ export default function MovieDetail() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+        <Details />
       </PrimaryHeaderFooter>
     </Style>
   );

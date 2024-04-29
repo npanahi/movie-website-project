@@ -17,14 +17,12 @@ export default function MPHero({ movie, casts }) {
     const sliceEnd = 3;
     return casts.cast
       .slice(0, sliceEnd)
-      .map(({ known_for_department, profile_path, name }, i) => {
+      .map(({ known_for_department, profile_path, name, id }, i) => {
         if (known_for_department == "Acting")
           return (
-            <>
-              <span className="cast-name">
-                {i !== sliceEnd - 1 ? name + ", " : name}
-              </span>
-            </>
+            <span className="cast-name">
+              {i !== sliceEnd - 1 ? name + ", " : name}
+            </span>
           );
       });
   };
@@ -37,37 +35,46 @@ export default function MPHero({ movie, casts }) {
         <div className="hero-box">
           <div className="hero-wrapper relative">
             <div className="background-wrapper">
-              <img src={`${imgBase.orURL}${movie.backdrop_path}`} />
+              <img
+                alt={`${movie.title}`}
+                src={`${imgBase.orURL}${
+                  movie.backdrop_path || movie.poster_path
+                }`}
+              />
             </div>
-            <div className="container ">
-              <h1>{movie.title}</h1>
-              <h4>{movie.tagline}</h4>
-              <div className=" text-wrapper">
-                <div className="flex-box top flex-x align-center">
-                  <a href={movie.homepage} target="blank">
-                    <ButtonPrimary text="Continue" />
-                  </a>
-                  <div className="">{movie.overview}</div>
-                </div>
-                <div className="flex-box bottom flex-x align-center m-t-10 space-between">
-                  <div className="left flex-x align-center gap-10">
-                    <ButtonPrimary text="In Next" />
-                    <div className="genres">
-                      <b>{renderGenres(movie.genres)}</b>
-                    </div>
-                    <div className="release_date">
-                      {movie.release_date
-                        ? movie.release_date.split("-")[0]
-                        : ""}
-                    </div>
-                    <div>{timeGenerator(movie.runtime)}</div>
+            <div className="content">
+              <div className="container ">
+                <h1>{movie.title}</h1>
+                <h4>{movie.tagline}</h4>
+                <div className=" text-wrapper">
+                  <div className="flex-box top flex-x align-center">
+                    <a href={movie.homepage} target="blank">
+                      <ButtonPrimary text="Continue" />
+                    </a>
+                    <div className="">{movie.overview}</div>
                   </div>
-                  <div className="right align-center">
-                    <div className="actores">
-                      <div className="main-actores ">
-                        <b>Main actores:</b> {renderCasts()}
+                  <div className="flex-box bottom flex-x align-center m-t-10 space-between">
+                    <div className="left flex-x align-center gap-10">
+                      <ButtonPrimary text="In Next" />
+                      <div className="genres">
+                        <b>{renderGenres(movie.genres)}</b>
                       </div>
-                      {/* <div className="director">Directed by:</div> */}
+
+                      <div className="release_date">
+                        {movie.release_date
+                          ? movie.release_date.split("-")[0]
+                          : ""}
+                      </div>
+                      <div className="time-generator">
+                        {timeGenerator(movie.runtime)}
+                      </div>
+                    </div>
+                    <div className="right align-center">
+                      <div className="actores">
+                        <div className="main-actores ">
+                          <b>Main actores:</b> {renderCasts()}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

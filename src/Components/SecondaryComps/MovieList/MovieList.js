@@ -70,11 +70,12 @@ export default function MovieList(props) {
       ) => {
         if (backdrop_path === null) return "";
         return (
-          <div className="list">
+          <div key={id} className="list">
             <div className="backdrop-holder">
               <Link to={`movie/${id}`}>
                 <div className="image-wrapper">
                   <img
+                    alt={title}
                     className="shadow "
                     src={`${imgBase.orURL}${poster_path}`}
                   />

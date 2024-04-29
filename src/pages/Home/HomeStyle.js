@@ -63,15 +63,19 @@ export const Style = styled.div`
     padding: 0 250px;
   }
   .footer {
-    margin-top: 800px;
+    margin-top: 900px;
   }
   .movie-list {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 10px;
   }
-  /* .red {
-    width: 100%;
-    height: 200px;
-    background: red;
-  } */
+  .middle-poster {
+    padding: 30px 0;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+
+    img {
+      border-radius: 20px;
+    }
+  }
 `;

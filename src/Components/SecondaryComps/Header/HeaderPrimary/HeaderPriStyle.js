@@ -22,8 +22,10 @@ export const Style = styled.div`
       top: 50%;
       left: 3%;
       transform: translateY(-60%);
+      color: #fff;
     }
     input {
+      color: #fff;
       &::placeholder {
         color: #8d8d92;
         font-size: 16px;

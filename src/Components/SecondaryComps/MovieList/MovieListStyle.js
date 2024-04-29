@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Style = styled.div`
   .movie-list-wrapper {
     .slider-container {
-      /* gap: 20px; */
       .list {
         display: flex;
         gap: 10px;
@@ -35,14 +34,14 @@ export const Style = styled.div`
               width: 100%;
               height: 100%;
               background-color: rgba(0, 0, 0, 0.5);
-              border-radius: 5px;
+              border-radius: 15px;
               opacity: 0;
               transition: all 0.5s;
             }
             img {
               &:hover {
               }
-              border-radius: 5px;
+              border-radius: 15px;
             }
             .elipsis-icon {
               &:hover {
@@ -58,7 +57,6 @@ export const Style = styled.div`
               width: 30px;
               height: 30px;
               border-radius: 50%;
-              /* background-color: red; */
               text-align: center;
               .icon {
                 vertical-align: baseline;
@@ -88,7 +86,7 @@ export const Style = styled.div`
               margin-top: 15px;
             }
             .genres {
-              margin-top: 8px;
+              /* margin-top: 8px; */
               font-size: 1.2rem;
               line-height: 1.25;
               font-weight: 400;
@@ -99,13 +97,4 @@ export const Style = styled.div`
       }
     }
   }
-  /* .slider {
-    .list {
-      padding: 0 5px;
-      border-radius: 10px;
-      img {
-        border-radius: 10px;
-      }
-    }
-  } */
 `;

@@ -32,14 +32,23 @@ export default function HPHero({ movies, genres }) {
       .slice(0, 8)
       .map(
         (
-          { overview, name, poster_path, backdrop_path, id, title, genre_ids },
+          {
+            overview,
+            name,
+            poster_path,
+            backdrop_path,
+            id,
+            title,
+            genre_ids,
+            tagline,
+          },
           i
         ) => {
           return (
-            <div style={contentStyle}>
-              <div className="hero-wrapper relative">
-                <div className="background-wrapper">
-                  <img src={`${imgBase.orURL}${backdrop_path}`} />
+            <div key={id} style={contentStyle}>
+              <div className="hero-wrapper  relative">
+                <div className="background-wrapper ">
+                  <img alt={title} src={`${imgBase.orURL}${backdrop_path}`} />
                   <div className="logo">
                     <img
                       className="logo-img "
@@ -50,7 +59,7 @@ export default function HPHero({ movies, genres }) {
                 </div>
                 <div className="container text-wrapper absolute">
                   <div className="flex-box flex-y">
-                    <div className="title">{title}</div>
+                    <h2 className="title">{title}</h2>
                     <div className="col-5 overview">{overview}</div>
                     <div className="genres">{renderGenres(genre_ids)}</div>
                     <Link className="i-b" to={`movie/${id}`}>

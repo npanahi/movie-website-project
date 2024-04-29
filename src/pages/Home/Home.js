@@ -5,7 +5,7 @@ import MovieList from "../../Components/SecondaryComps/MovieList/MovieList";
 import { Style } from "./HomeStyle";
 import api from "../../helpers/baseApi/api";
 import { Collapse } from "antd";
-import Timer from "../../helpers/timers/remainDates";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   // MOVIE STATES
@@ -177,6 +177,15 @@ export default function HomePage() {
             genres={genres}
             title={"Popular movies"}
           />
+          <div className="middle-poster">
+            <Link to={`movie`}>
+              <img
+                className="shadow "
+                src="assets/photos/banner.png"
+                alt="poster"
+              />
+            </Link>
+          </div>
           <MovieList
             className="movie-list"
             movies={topRatedSeries}
@@ -199,6 +208,15 @@ export default function HomePage() {
             movies={popularSeries}
             title={"Popular series"}
           />
+          <div className="middle-poster ">
+            <Link to={`movie`}>
+              <img
+                className="shadow "
+                src="assets/photos/sugar.png"
+                alt="poster"
+              />
+            </Link>
+          </div>
           <div className="featured-in">
             <div className="container">
               <div className="logo center-text m-t-100">

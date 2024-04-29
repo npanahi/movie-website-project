@@ -14,29 +14,42 @@ export const Style = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.7) 1%,
+          rgba(0, 0, 0, 0.3) 10%,
+          transparent 30%,
+          transparent 0%,
+          rgba(0, 0, 0, 0.5) 83%,
+          rgba(0, 0, 0, 0.7) 90%
+        );
       }
     }
-    .container {
-      max-width: 1400px;
+    .content {
       margin: 0 auto;
       height: auto;
       font-size: 1.5rem;
       bottom: 10%;
-      left: 3%;
+      /* left: 3%; */
       color: #fff;
       position: absolute;
+      width: 100%;
 
       .text-wrapper {
         /* width: 100%;
       font-size: 1.3rem;
       bottom: 10%;
-      left: 2%;
-      color: #fff; */
+      left: 2%; */
         .flex-box {
           width: 100%;
           height: 100%;
           gap: 10px;
+          .genres,
+          .release_date,
+          .time-generator,
+          .actores {
+            color: rgba(255, 255, 255, 0.5);
+          }
         }
       }
     }
