@@ -482,7 +482,8 @@ img {
 
 /* /////////////// numbers ///////////// */
 
-
-
+.main-title {
+    font-size: 1.8rem;
+  }
 
 `;

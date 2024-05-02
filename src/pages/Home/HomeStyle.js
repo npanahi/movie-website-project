@@ -78,4 +78,42 @@ export const Style = styled.div`
       border-radius: 20px;
     }
   }
+  .subcribe {
+    background-color: #000;
+    color: #fff;
+    padding: 35px 0;
+    .subcribe-wrapper {
+      max-width: 960px;
+      align-items: center;
+      margin: 0 auto;
+      gap: 40px;
+    }
+    .img-wrapper {
+      img {
+        flex-basis: 20%;
+        height: 38px;
+        min-width: 80px;
+        color: #fff;
+      }
+    }
+    .text {
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.23;
+      color: #ebebeb;
+    }
+    .sub-btn {
+      background: #fff;
+      border: 0;
+      height: 28px;
+      min-width: 80%;
+      border-radius: 4px;
+      margin: 6px 0;
+      padding: 0 35px;
+      font-size: 12px;
+    }
+    .learn-more {
+      font-size: 1.1rem;
+    }
+  }
 `;

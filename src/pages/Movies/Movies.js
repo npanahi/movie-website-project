@@ -53,13 +53,16 @@ export default function MoviesPage() {
       if (arr.includes(cur.id)) return <span>{cur.name}. </span>;
     });
   }
+  let numMovies = 0;
   const renderMovies = function () {
     if (movies === null || movies === undefined) return "";
+    let pageSum = (currntPage - 1) * 20;
     return movies.results.map(
       (
         { overview, name, poster_path, backdrop_path, id, title, genre_ids },
         i
       ) => {
+        numMovies++;
         return (
           <li key={id}>
             <div className="img-wrapper">
@@ -75,7 +78,7 @@ export default function MoviesPage() {
               </Link>
             </div>
             <div className="text-wrapper flex-x align-center gap-20">
-              <div className=" num ">{i + 1}</div>
+              <div className="num">{numMovies + pageSum}</div>
               <div className="main-text">
                 <Link to={`./${id}`}>
                   <h2 className="title ">{title}</h2>

@@ -69,7 +69,7 @@ export default function SearchPach() {
                       src={`${imgBase.orURL}${poster_path}`}
                     />
                   </div>
-                  <h2 className="title">{title}</h2>
+                  {/* <h2 className="title">{title}</h2> */}
                 </Link>
               </li>
             );
@@ -92,7 +92,7 @@ export default function SearchPach() {
                 src={`${imgBase.orURL}${poster_path}`}
               />
             </div>
-            <h2 className="title">{title}</h2>
+            {/* <div className="title">{title}</div> */}
           </Link>
         </li>
       );
@@ -106,7 +106,7 @@ export default function SearchPach() {
           <div className="default">
             {!query && (
               <div>
-                <h1>Top resaults</h1>
+                <h1>Explore Popular Series, Films, and More</h1>
                 <MovieCategories />
                 <ul className="now-palying">{renderNowPlayingMovies()} </ul>
               </div>

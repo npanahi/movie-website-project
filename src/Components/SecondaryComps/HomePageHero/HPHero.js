@@ -21,7 +21,12 @@ export default function HPHero({ movies, genres }) {
       if (arr.includes(cur.id)) filteredGenres.push(cur.name);
     });
     return filteredGenres.map((cur, i) => {
-      return <span> {i !== filteredGenres.length - 1 ? cur + "," : cur} </span>;
+      return (
+        <span key={i}>
+          {" "}
+          {i !== filteredGenres.length - 1 ? cur + "," : cur}{" "}
+        </span>
+      );
     });
   }
   function renderFarm() {

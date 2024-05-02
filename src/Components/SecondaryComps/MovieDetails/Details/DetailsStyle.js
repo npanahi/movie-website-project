@@ -28,7 +28,7 @@ export const Style = styled.div`
       border-top: 1px solid #cccccc;
       .title-wrapper {
         .list {
-          .title {
+          .sec-title {
             font-weight: 700;
             font-size: 1.3rem;
           }

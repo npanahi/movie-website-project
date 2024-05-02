@@ -46,7 +46,7 @@ export default function Details() {
     <Style>
       <div className="details">
         <div className="container">
-          <h2>Over</h2>
+          <h2>About</h2>
           <div className="overview-box col-4">
             <div className="over-wrapper">
               <div className="movie-title">
@@ -70,17 +70,17 @@ export default function Details() {
                 <h2 className="titr">Information</h2>
                 <ul className="list">
                   <li className="m-b-20">
-                    <div className="title">Appeared</div>
+                    <div className="sec-title">Appeared</div>
                     <div className="text">
                       {movie.release_date.split("-")[0]}
                     </div>
                   </li>
                   <li className="m-b-20">
-                    <div className="title">Run time</div>
+                    <div className="sec-title">Run time</div>
                     <div className="text">{timeGenerator(movie.runtime)}</div>
                   </li>
                   <li className="m-b-20">
-                    <div className="title">Region of origin</div>
+                    <div className="sec-title">Region of origin</div>
                     <div className="text">
                       {movie.production_countries.map((c, i) => {
                         return i === movie.production_countries.length - 1
@@ -95,11 +95,11 @@ export default function Details() {
                 <h2 className="titr">Language</h2>
                 <ul className="list">
                   <li className="m-b-20">
-                    <div className="title">Original audio</div>
+                    <div className="sec-title">Original audio</div>
                     <div className="text">{renderLanguages()}</div>
                   </li>
                   <li className="m-b-20">
-                    <div className="title">Original title</div>
+                    <div className="sec-title">Original title</div>
                     <div className="text">{movie.original_title}</div>
                   </li>{" "}
                   <li>

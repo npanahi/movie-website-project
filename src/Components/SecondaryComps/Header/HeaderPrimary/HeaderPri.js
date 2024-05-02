@@ -29,22 +29,23 @@ export default function HeaderPri(props) {
             </li>
             <li>
               <div className="movie-page">
-                <Link to={`/movie`} target="blank">
+                {/* <Link to={`/movie`} target="blank">
                   Movies
-                </Link>
-                {/* <NavLink
+                </Link> */}
+                <NavLink
+                  className="link"
                   to="/movie"
                   style={({ isActive, isPending, isTransitioning }) => {
                     return {
                       fontWeight: isActive ? "bold" : "",
-                      fontSize: isActive ? "3rem" : "2rem",
-                      color: isPending ? "red" : "blue",
+                      fontSize: isActive ? "1.6rem" : "1.4rem",
+                      color: isPending ? "red" : "#8d8d92",
                       // viewTransitionName: isTransitioning ? "slide" : "",
                     };
                   }}
                 >
                   Movies{" "}
-                </NavLink> */}
+                </NavLink>
               </div>
             </li>
             <li>

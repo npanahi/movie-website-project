@@ -18,11 +18,6 @@ export const Style = styled.div`
     }
 
     &::before {
-      /* content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.2); */
       content: "";
       position: absolute;
       top: 0;

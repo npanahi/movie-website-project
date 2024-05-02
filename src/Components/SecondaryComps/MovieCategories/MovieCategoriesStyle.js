@@ -3,10 +3,10 @@ export const Style = styled.div`
   .categories {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin-bottom: 40px;
-    border-bottom: 1px solid #cccccc;
-    padding-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 20px;
+    /* border-bottom: 1px solid #cccccc; */
+    /* padding-bottom: 25px; */
     li {
       cursor: pointer;
       h2 {

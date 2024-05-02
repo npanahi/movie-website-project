@@ -14,15 +14,25 @@ export const Style = styled.div`
         position: absolute;
         width: 100%;
         height: 100%;
+
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 0.7) 1%,
-          rgba(0, 0, 0, 0.3) 10%,
+          rgba(0, 0, 0, 0.5) 5%,
+          rgba(0, 0, 0, 0.3) 15%,
           transparent 30%,
           transparent 0%,
-          rgba(0, 0, 0, 0.5) 83%,
-          rgba(0, 0, 0, 0.7) 90%
+          rgba(0, 0, 0, 0.8) 83%,
+          rgba(0, 0, 0) 95%
         );
+      }
+      .logo {
+        width: 105px;
+        height: 40px;
+        position: absolute;
+        top: 5%;
+        left: 5.2%;
+        img {
+        }
       }
     }
     .content {
@@ -30,28 +40,43 @@ export const Style = styled.div`
       height: auto;
       font-size: 1.5rem;
       bottom: 10%;
-      /* left: 3%; */
       color: #fff;
       position: absolute;
       width: 100%;
 
       .text-wrapper {
-        /* width: 100%;
-      font-size: 1.3rem;
-      bottom: 10%;
-      left: 2%; */
+        font-size: 1.4rem;
+        line-height: 1.33338;
+        font-weight: 400;
+        letter-spacing: 0;
+        color: #fff;
+
         .flex-box {
           width: 100%;
           height: 100%;
           gap: 10px;
           .genres,
           .release_date,
+          .time-generator {
+            font-weight: 800;
+            font-size: 1.3rem;
+            line-height: 1.19;
+          }
+          .genres,
+          .release_date,
           .time-generator,
           .actores {
-            color: rgba(255, 255, 255, 0.5);
+            /* color: rgba(255, 255, 255, 0.5); */
           }
         }
       }
     }
   }
+  b {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+  }
+  .overview {
+  }
 `;
+// rgba(255, 255, 255, 0.64)

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 export const Style = styled.div`
   color: #333333;
-
+  h2 {
+    margin: 20px 0;
+  }
   .movie-casts {
     border-bottom: 1px solid #cccccc;
     padding-bottom: 30px;
@@ -82,7 +84,7 @@ export const Style = styled.div`
   }
   .movie-similar {
     border-bottom: 1px solid #cccccc;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
 
     .similars {
       display: flex;
@@ -98,19 +100,12 @@ export const Style = styled.div`
           }
           border-radius: 15px;
         }
-        .title {
-          font-size: 1.3rem;
-          line-height: 1.46667;
-          font-weight: 600;
-          letter-spacing: 0;
-          margin-top: 10px;
-        }
       }
     }
   }
   .movie-recommendations {
     border-bottom: 1px solid #cccccc;
-    padding-bottom: 50px;
+    padding-bottom: 60px;
     .recommendations {
       display: flex;
       gap: 10px;
@@ -126,13 +121,6 @@ export const Style = styled.div`
             transform: translate3d(0, -2%, 0) scale(1.1);
           }
           border-radius: 15px;
-        }
-        .title {
-          font-size: 1.3rem;
-          line-height: 1.46667;
-          font-weight: 600;
-          letter-spacing: 0;
-          margin-top: 10px;
         }
       }
     }
@@ -173,54 +161,12 @@ export const Style = styled.div`
       }
     }
   }
-  /* .details {
-    width: 100%;
-    height: auto;
-    background-color: #f3f3f3;
-    border-top: 1px solid #cccccc;
-    padding: 20px 0;
-    .overview-box {
-      background-color: #ccc;
-      border-radius: 15px;
-      padding: 10px 20px 20px 20px;
-      .over-wrapper {
-        .movie-title {
-        }
-        .movie-genre {
-          font-size: 1.2rem;
-          font-weight: 400;
-          padding-bottom: 10px;
-        }
-        .over-caption {
-          font-size: 1.3rem;
-        }
-      }
-    }
-    .info {
-      margin-top: 30px;
-      border-top: 1px solid #cccccc;
-      .title-wrapper {
-        .list {
-          .title {
-            font-weight: 700;
-            font-size: 1.3rem;
-          }
-          .text {
-            margin-top: 5px;
-            font-size: 1.2rem;
-          }
-          .badge {
-            max-width: 22px;
-            height: auto;
-          }
-        }
-      }
-    }
+  .title {
+    font-size: 1.4rem;
+    line-height: 1.33338;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-top: 10px;
+    padding: 0 10px;
   }
-  .imdb {
-    img {
-      max-width: 50px;
-      height: auto;
-    }
-  } */
 `;

@@ -41,4 +41,9 @@ export const Style = styled.div`
       vertical-align: middle;
     }
   }
+  .NavLink {
+    &:hover {
+      font-size: 20px;
+    }
+  }
 `;
