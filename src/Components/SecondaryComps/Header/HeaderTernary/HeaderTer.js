@@ -1,4 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 import { Style } from "./HeaderTerStyle";
 import {
   faMagnifyingGlass,
@@ -11,7 +12,9 @@ export default function HeaderTer() {
         <div className="sec-container">
           <ul className="nav-list flex-x align-center space-between">
             <li class="apple-logo">
-              <a href="#"></a>
+              <Link to={"/"}>
+                <div href="#"></div>
+              </Link>
             </li>
             <li>
               <a href="#">Store</a>

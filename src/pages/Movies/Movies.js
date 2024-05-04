@@ -7,6 +7,7 @@ import { Pagination } from "antd";
 import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);

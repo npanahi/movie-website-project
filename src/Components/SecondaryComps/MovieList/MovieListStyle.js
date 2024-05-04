@@ -17,35 +17,49 @@ export const Style = styled.div`
             img {
               min-height: 400px;
             }
+            .img-back {
+              position: relative;
+              max-width: 262px;
+              min-height: 400px;
+
+              &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 15px;
+                opacity: 0;
+                transition: all 0.5s;
+              }
+            }
             &:hover {
               .elipsis-icon {
                 opacity: 1;
               }
 
-              &::before {
-                opacity: 1;
+              .img-back {
+                &::before {
+                  opacity: 1;
+                }
               }
             }
-            &::before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background-color: rgba(0, 0, 0, 0.5);
-              border-radius: 15px;
-              opacity: 0;
-              transition: all 0.5s;
-            }
+
             img {
               &:hover {
               }
               border-radius: 15px;
             }
             .elipsis-icon {
+              position: relative;
+
               &:hover {
                 background-color: #0b84ff;
+                /* .elip-text {
+                  opacity: 1;
+                } */
               }
               position: absolute;
               font-size: 30px;
@@ -63,6 +77,43 @@ export const Style = styled.div`
               }
               .popover {
                 background-color: #2d2d2d;
+              }
+              .elip-text {
+                position: absolute;
+                right: 0;
+                bottom: 120%;
+                /* opacity: 0; */
+                transition: all 0.5s;
+                &:hover {
+                  background-color: #fff;
+                  border-radius: 5px;
+                  /* border: 1px solid #707070; */
+                }
+                .elip-container {
+                  width: 120px;
+                  height: 30px;
+                  background-color: rgba(255, 255, 255, 0.8);
+                  border: 1px solid #fff;
+                  border-radius: 5px;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 10px 5px;
+                  transition: all 0.5s;
+
+                  .content {
+                    color: #707070;
+                    font-size: 1.1rem;
+                    margin: 0;
+                  }
+                  .share-icon {
+                    width: 20px;
+                    height: 40px;
+                    svg {
+                      width: 15px;
+                      height: 15px;
+                    }
+                  }
+                }
               }
             }
             .vote-chart {

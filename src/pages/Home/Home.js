@@ -213,15 +213,6 @@ export default function HomePage() {
             title={"Popular series"}
             series={series}
           />
-          <div className="middle-poster ">
-            <Link to={`movie`}>
-              <img
-                className="shadow "
-                src="assets/photos/sugar.png"
-                alt="poster"
-              />
-            </Link>
-          </div>
         </div>
         <div className="subcribe">
           <div className="subcribe-wrapper flex-x justify-center ">

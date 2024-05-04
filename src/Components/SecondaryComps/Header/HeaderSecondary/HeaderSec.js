@@ -5,6 +5,7 @@ import {
   faBagShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "antd";
+import { Link } from "react-router-dom";
 export default function HeaderSec() {
   return (
     <Style>
@@ -12,9 +13,9 @@ export default function HeaderSec() {
         <div className="sec-container">
           <ul className="nav-list flex-x align-center space-between">
             <li>
-              <a href="#" target="-blank">
-                <img src="/assets/photos/header/apple-logo.svg" />
-              </a>
+              <Link to={"/"}>
+                <img src="/assets/photos/header/apple-logo.svg" alt="logo" />
+              </Link>
             </li>
             <li>
               <a href="#">Store</a>

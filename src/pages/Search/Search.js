@@ -5,7 +5,8 @@ import { Style } from "./SearchStyle";
 import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import { Link } from "react-router-dom";
 import MovieCategories from "../../Components/SecondaryComps/MovieCategories/MovieCategories";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlay } from "@fortawesome/free-solid-svg-icons";
 export default function SearchPach() {
   const [movie, setMovie] = useState(null);
   const [query, setQuery] = useState("");
@@ -68,8 +69,11 @@ export default function SearchPach() {
                       className="shadow"
                       src={`${imgBase.orURL}${poster_path}`}
                     />
+                    <div className="icon-wrapper">
+                      <FontAwesomeIcon className="play-icon" icon={faPlay} />
+                    </div>
                   </div>
-                  {/* <h2 className="title">{title}</h2> */}
+                  <div className="title">{title}</div>
                 </Link>
               </li>
             );
@@ -91,8 +95,10 @@ export default function SearchPach() {
                 className="shadow"
                 src={`${imgBase.orURL}${poster_path}`}
               />
+              <div className="icon-wrapper">
+                <FontAwesomeIcon className="play-icon" icon={faPlay} />
+              </div>
             </div>
-            {/* <div className="title">{title}</div> */}
           </Link>
         </li>
       );
