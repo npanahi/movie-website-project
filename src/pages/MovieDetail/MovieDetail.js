@@ -6,10 +6,9 @@ import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import MPHero from "../../Components/SecondaryComps/MoviePageHero/MPHero";
 import formatTime from "../../helpers/dateFormater/dateFormater";
-// import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import timeGenerator from "../../helpers/timers/timeGenerator";
+
 import Details from "../../Components/SecondaryComps/MovieDetails/Details/Details";
 export default function MovieDetail() {
   const { id } = useParams();
@@ -18,7 +17,7 @@ export default function MovieDetail() {
   const [reviews, setReviews] = useState(null);
   const [similar, setSimilar] = useState(null);
   const [images, setImages] = useState(null);
-  // const [language, setLanguage] = useState(null);
+
   const [recommendations, setRecommendations] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -113,7 +112,7 @@ export default function MovieDetail() {
     console.log(credits);
     if (credits === null || credits === undefined) return;
     if (credits.cast === null || credits.cast === undefined) return;
-    // if (credits.cast.length === 0) return;
+
     return credits.cast
       .slice(0, 10)
       .map(({ known_for_department, profile_path, name, character, id }, i) => {

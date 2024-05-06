@@ -22,17 +22,16 @@ export default function MovieList(props) {
   function onMouseLeave(e) {
     setShow(false);
   }
-  // function onClickCopy(e) {
-  //   let copy = navigator.clipboard.writeText(
-  //     `http://localhost:60842/movie/${id}`
-  //   );
-  //   return copy;
-  //   // setShow(!shs
-  // }
+
   function renderGenres(arr) {
     if (genres === null || genres === undefined) return "";
-    return genres.map((cur) => {
-      if (arr.includes(cur.id)) return <span key={cur.id}>{cur.name}. </span>;
+    return genres.map((cur, i) => {
+      if (arr.includes(cur.id))
+        return (
+          <span key={cur.id}>
+            {i !== genres.length - 1 ? cur.name + ". " : cur.name}
+          </span>
+        );
     });
   }
 
@@ -125,7 +124,7 @@ export default function MovieList(props) {
                       onMouseLeave={onMouseLeave}
                       onClick={() =>
                         navigator.clipboard.writeText(
-                          `http://localhost:64172
+                          `http://localhost:49917
                         /movie/${id}`
                         )
                       }

@@ -7,23 +7,28 @@ import { Link } from "react-router-dom";
 import MovieCategories from "../../Components/SecondaryComps/MovieCategories/MovieCategories";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { useSearchParams, createSearchParams } from "react-router-dom";
 export default function SearchPach() {
   const [movie, setMovie] = useState(null);
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
   const [nowPlayingMovies, setNowPlayingMovies] = useState(null);
 
   const onChange = function (value) {
     setQuery(value);
+    setSearchParams(createSearchParams({ q: value }));
   };
   useEffect(() => {
     getSearchMoviesApi();
     getNowPlayingMoviesApi();
   }, [query]);
   async function getSearchMoviesApi() {
+    console.log(searchParams.get("q"));
+
     try {
       const res = await api.get("search/movie", {
         params: {
-          query: query,
+          query: searchParams.get("q"),
         },
       });
       console.log(query);
@@ -107,10 +112,10 @@ export default function SearchPach() {
 
   return (
     <Style>
-      <PrimaryHeaderFooter onChange={onChange}>
+      <PrimaryHeaderFooter onChange={onChange} query={query}>
         <div className="container">
           <div className="default">
-            {!query && (
+            {!searchParams.get("q") && (
               <div>
                 <h1>Explore Popular Series, Films, and More</h1>
                 <MovieCategories />
@@ -118,7 +123,7 @@ export default function SearchPach() {
               </div>
             )}
           </div>
-          {query && <div>{renderMovies()}</div>}
+          {searchParams.get("q") && <ul>{renderMovies()}</ul>}
         </div>
       </PrimaryHeaderFooter>
     </Style>

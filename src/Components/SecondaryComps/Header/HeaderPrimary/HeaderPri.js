@@ -1,7 +1,8 @@
-import { Link, useParams, NavLink } from "react-router-dom";
+import { Link, useParams, NavLink, useNavigate } from "react-router-dom";
 import { Style } from "./HeaderPriStyle";
 
 export default function HeaderPri(props) {
+  const navigate = useNavigate();
   const onChangeLocal = function (e) {
     props.onChange(e.target.value);
   };
@@ -81,17 +82,19 @@ export default function HeaderPri(props) {
               fill="#8d8d92"
             ></path>
           </svg>
-          <Link to={`/search`}>
-            <input
-              name="query"
-              placeholder="Seek"
-              autocomplete="off"
-              class="search-header__search-input"
-              id="search-header-form-input-box"
-              type="search"
-              onChange={onChangeLocal}
-            ></input>
-          </Link>
+          <input
+            name="query"
+            placeholder="Seek"
+            autocomplete="off"
+            class="search-header__search-input"
+            id="search-header-form-input-box"
+            type="search"
+            onChange={onChangeLocal}
+            value={props.query}
+            onClick={() => {
+              !props.query && navigate("/search");
+            }}
+          ></input>
           <svg
             viewBox="0 0 30 30"
             height="25"

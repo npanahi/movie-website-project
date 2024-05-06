@@ -4,7 +4,7 @@ import { Style } from "./PrimaryHFStyle";
 export default function PrimaryHeaderFooter(props) {
   return (
     <Style>
-      <HeaderPri onChange={props.onChange} />
+      <HeaderPri onChange={props.onChange} query={props.query} />
       <div className="space">{props.children}</div>
       <FooterPri className={props.className} />
     </Style>
