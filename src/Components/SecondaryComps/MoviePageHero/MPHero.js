@@ -11,7 +11,6 @@ export default function MPHero({ movie, casts }) {
       return (
         <span key={cur.id}>
           {i !== genres.length - 1 ? cur.name + ". " : cur.name}
-          {/* {cur.name} */}
         </span>
       );
     });
@@ -61,6 +60,7 @@ export default function MPHero({ movie, casts }) {
       </>
     );
   };
+
   if (casts === null || casts === undefined) return;
   if (movie === null || movie === undefined) return;
 
@@ -85,18 +85,17 @@ export default function MPHero({ movie, casts }) {
               </div>
             </div>
             <div className="content">
-              <div className="container ">
+              <div className=" container ">
                 <h1>{movie.title}</h1>
                 <h4>{movie.tagline}</h4>
-
                 <div className=" text-wrapper">
-                  <div className="flex-box top flex-x align-center">
+                  <div className="top flex-x align-center gap-10">
                     <a href={movie.homepage} target="blank">
                       <ButtonPrimary text="Continue" />
                     </a>
                     <div className="overview">{movie.overview}</div>
                   </div>
-                  <div className="flex-box bottom flex-x align-center m-t-10 space-between">
+                  <div className="bottom flex-x align-center   space-between gap-10 ">
                     <div className="left flex-x align-center gap-10">
                       <ButtonPrimary text="In Next" />
                       <div className="genres">{renderGenres(movie.genres)}</div>
@@ -106,9 +105,21 @@ export default function MPHero({ movie, casts }) {
                       <div className="time-generator">
                         {timeGenerator(movie.runtime)}
                       </div>
+                      <div className="badge">
+                        <img alt="logos" src="/assets/photos/badge.png" />
+                      </div>
+                      <div className="reting m-y-20">
+                        {movie.vote_average > 0 ? (
+                          <div className="rating-text">
+                            {` ${Number(movie.vote_average * 10).toFixed()}%`}
+                          </div>
+                        ) : (
+                          <div className="rating-text">NR</div>
+                        )}
+                      </div>
                     </div>
                     <div className="right align-center">
-                      <div className="actores">
+                      <div className="actores  ">
                         <div className="main-actores m-b-5 ">
                           <b>Staring</b> {renderCasts()}
                         </div>

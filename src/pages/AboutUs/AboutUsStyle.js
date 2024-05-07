@@ -25,6 +25,7 @@ export const Style = styled.div`
     top: 0;
     left: 0;
     background-color: #fff;
+    z-index: 100;
     .text {
       font-size: 2.1rem;
       font-weight: 600;

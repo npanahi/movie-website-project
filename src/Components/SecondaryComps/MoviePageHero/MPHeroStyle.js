@@ -21,8 +21,8 @@ export const Style = styled.div`
           rgba(0, 0, 0, 0.3) 15%,
           transparent 30%,
           transparent 0%,
-          rgba(0, 0, 0, 0.8) 83%,
-          rgba(0, 0, 0) 95%
+          rgba(20, 20, 20) 83%,
+          rgba(20, 20, 20) 95%
         );
       }
       .logo {
@@ -38,36 +38,44 @@ export const Style = styled.div`
     .content {
       margin: 0 auto;
       height: auto;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       bottom: 10%;
       color: #fff;
       position: absolute;
       width: 100%;
 
       .text-wrapper {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
         line-height: 1.33338;
         font-weight: 400;
         letter-spacing: 0;
         color: #fff;
 
-        .flex-box {
-          width: 100%;
-          height: 100%;
-          gap: 10px;
-          .genres,
-          .release_date,
-          .time-generator {
+        .reting {
+          position: relative;
+          width: 32px;
+          height: 32px;
+          border: 2px dashed #909095;
+          border-radius: 50%;
+          color: #909095;
+
+          .rating-text {
+            position: absolute;
+            font-size: 0.9rem;
             font-weight: 800;
-            font-size: 1.3rem;
-            line-height: 1.19;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
           }
-          .genres,
-          .release_date,
-          .time-generator,
-          .actores {
-            /* color: rgba(255, 255, 255, 0.5); */
-          }
+        }
+        .genres,
+        .release_date,
+        .time-generator {
+          font-weight: 500;
+          font-size: 1.2rem;
+          line-height: 1.19;
+          color: #909095;
         }
       }
     }
@@ -76,7 +84,12 @@ export const Style = styled.div`
     color: rgba(255, 255, 255, 0.6);
     font-weight: 300;
   }
-  .overview {
+
+  .badge {
+    max-width: 280px;
+    max-height: 31px;
+  }
+  .actores {
+    flex-grow: 2;
   }
 `;
-// rgba(255, 255, 255, 0.64)

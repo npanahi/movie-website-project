@@ -13,7 +13,10 @@ export default function ContactUs() {
       <TernaryHF>
         <div className="hero">
           <div>
-            <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_heros/hero-banner-tv.image.large_2x.jpg" />
+            <img
+              src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_heros/hero-banner-tv.image.large_2x.jpg"
+              alt="apple"
+            />
           </div>
         </div>
         <div className="suppport">
@@ -22,7 +25,10 @@ export default function ContactUs() {
             <ul className="flex-x align-center">
               <li className="col-3">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-subscriptions_2x.svg" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-subscriptions_2x.svg"
+                    alt="apple"
+                  />
                 </div>
                 <div className="linked-text">
                   <a className="m-r-10" href="#">
@@ -33,7 +39,10 @@ export default function ContactUs() {
               </li>
               <li className="col-3">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-apple-tv_2x.svg" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-apple-tv_2x.svg"
+                    alt="apple"
+                  />
                 </div>
                 <div className="linked-text">
                   <a className="m-r-10" href="#">
@@ -44,7 +53,10 @@ export default function ContactUs() {
               </li>{" "}
               <li className="col-3">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-airplay-video_2x.svg" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-airplay-video_2x.svg"
+                    alt="apple"
+                  />
                 </div>
                 <div className="linked-text">
                   <a className="m-r-10" href="#">
@@ -55,7 +67,10 @@ export default function ContactUs() {
               </li>{" "}
               <li className="col-3">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-homepod-mini_2x.svg" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_navicons/nav-icon-homepod-mini_2x.svg"
+                    alt="apple"
+                  />
                 </div>
                 <div className="linked-text">
                   <a className="m-r-10" href="#">
@@ -72,7 +87,10 @@ export default function ContactUs() {
             <ul className="flex-x card">
               <li className="col-5">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-sm-apple-tv_2x.png" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-sm-apple-tv_2x.png"
+                    alt="apple"
+                  />
                 </div>
                 <div className="text">
                   <div className="title">Use the Apple TV app</div>
@@ -100,7 +118,10 @@ export default function ContactUs() {
               </li>
               <li className="col-5">
                 <div className="img-wrapper">
-                  <img src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-sm-tv-plus_2x.png" />
+                  <img
+                    src="https://support.apple.com/content/dam/edam/applecare/images/en_US/psp_content/content-block-sm-tv-plus_2x.png"
+                    alt="apple"
+                  />
                 </div>
                 <div className="text">
                   <div className="title">Subscribe to Apple TV+</div>

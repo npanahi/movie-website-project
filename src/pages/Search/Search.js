@@ -54,7 +54,7 @@ export default function SearchPach() {
         <div className="not-found">
           <h1>No Results</h1>
           <p>
-            {`There were no results for ”${query}“ on Apple TV+. Try a new 
+            {`There were no results for ”${query}“ on Apple TV+. Try a new
             search.`}
           </p>
         </div>

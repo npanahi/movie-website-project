@@ -82,12 +82,10 @@ export const Style = styled.div`
                 position: absolute;
                 right: 0;
                 bottom: 120%;
-                /* opacity: 0; */
                 transition: all 0.5s;
                 &:hover {
                   background-color: #fff;
                   border-radius: 5px;
-                  /* border: 1px solid #707070; */
                 }
                 .elip-container {
                   width: 120px;
@@ -171,18 +169,12 @@ export const Style = styled.div`
             }
             .genres {
               color: #707070;
-              /* margin-top: 8px; */
               font-size: 1.2rem;
-              /* line-height: 1.25; */
-              /* font-weight: 400;
-              letter-spacing: 0; */
-              /* font-size: 12px; */
               line-height: 1.41667;
             }
             .release-date {
               font-size: 1.2rem;
               color: #707070;
-
               line-height: 1.41667;
             }
           }

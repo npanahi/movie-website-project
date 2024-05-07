@@ -15,11 +15,6 @@ export default function MoviesPage() {
   const [currntPage, setCurentPage] = useState(1);
   // const [metadata, setMetadata] = useState(null);
 
-  // useEffect(() => {
-  //   getMoviesApi();
-  //   getGenreApi();
-  // }, currntPage);
-
   useEffect(() => {
     getMoviesApi();
     getGenreApi();
@@ -51,19 +46,20 @@ export default function MoviesPage() {
   function renderGenres(arr) {
     if (genres === null || genres === undefined) return "";
     return genres.map((cur) => {
-      if (arr.includes(cur.id)) return <span>{cur.name}. </span>;
+      if (arr.includes(cur.id)) return <span key={cur.id}>{cur.name}. </span>;
     });
   }
-  let numMovies = 0;
-  const renderMovies = function () {
+
+  let numMovie = 0;
+  function renderMovies() {
     if (movies === null || movies === undefined) return "";
-    let pageSum = (currntPage - 1) * 20;
+    let numMoviePerPage = (currntPage - 1) * 20;
     return movies.results.map(
       (
         { overview, name, poster_path, backdrop_path, id, title, genre_ids },
         i
       ) => {
-        numMovies++;
+        numMovie++;
         return (
           <li key={id}>
             <div className="img-wrapper">
@@ -79,7 +75,7 @@ export default function MoviesPage() {
               </Link>
             </div>
             <div className="text-wrapper flex-x align-center gap-20">
-              <div className="num">{numMovies + pageSum}</div>
+              <div className="num">{numMovie + numMoviePerPage}</div>
               <div className="main-text">
                 <Link to={`./${id}`}>
                   <h2 className="title ">{title}</h2>
@@ -91,7 +87,7 @@ export default function MoviesPage() {
         );
       }
     );
-  };
+  }
   const onChange = (page, pageSize) => {
     setCurentPage(page);
   };

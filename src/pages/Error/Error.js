@@ -1,10 +1,13 @@
-import TernaryHF from "../../Components/Layout/TernaryHF/TernaryHF";
-import TerFooter from "../../Components/SecondaryComps/Footer/FooterTernary/FooterTer";
-
+import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
+import { Style } from "./ErrorStyle";
 export default function Error() {
   return (
-    <TernaryHF>
-      <div>k;jlihkugjfhgxdg</div>
-    </TernaryHF>
+    <Style>
+      <PrimaryHeaderFooter>
+        <div className="container">
+          <h1>The page you’re looking for cannot be found.</h1>
+        </div>
+      </PrimaryHeaderFooter>
+    </Style>
   );
 }

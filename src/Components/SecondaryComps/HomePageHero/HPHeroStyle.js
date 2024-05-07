@@ -28,8 +28,8 @@ export const Style = styled.div`
         rgba(0, 0, 0, 0.3) 15%,
         transparent 30%,
         transparent 0%,
-        rgba(0, 0, 0, 0.8) 83%,
-        rgba(0, 0, 0) 95%
+        rgba(20, 20, 20) 83%,
+        rgba(20, 20, 20) 95%
       );
       width: 100%;
       height: 100%;
@@ -56,21 +56,17 @@ export const Style = styled.div`
         margin: 0;
       }
       .overview {
-        margin-bottom: 5px;
+        font-size: 1.4rem;
+        margin-bottom: 10px;
         line-height: 1.33338;
       }
       .genres {
         font-weight: 700;
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
         width: 50%;
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.7);
       }
     }
   }
 `;
-/* to bottom,
-        rgba(0, 0, 0, 0.7) 1%,
-        rgba(0, 0, 0, 0.3) 5%,
-        transparent 30%,
-        transparent 70%,
-        rgba(0, 0, 0, 0.3) 95%,
-        rgba(0, 0, 0, 0.7) 99% */

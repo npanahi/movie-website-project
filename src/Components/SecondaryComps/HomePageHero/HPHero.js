@@ -46,6 +46,7 @@ export default function HPHero({ movies, genres }) {
             title,
             genre_ids,
             tagline,
+            original_title,
           },
           i
         ) => {
@@ -61,12 +62,15 @@ export default function HPHero({ movies, genres }) {
                       src="https://is1-ssl.mzstatic.com/image/thumb/oEYYIjc6-3zT0jgpyUiIaw/1x40at.png"
                     />
                   </div>
+                  <h2 className="title">{title}</h2>
                 </div>
                 <div className="container text-wrapper absolute">
                   <div className="flex-box flex-y">
                     <h2 className="title">{title}</h2>
-                    <div className="col-5 overview">{overview}</div>
+
                     <div className="genres">{renderGenres(genre_ids)}</div>
+                    <div className="col-5 overview">{overview}</div>
+
                     <Link className="i-b" to={`movie/${id}`}>
                       <ButtonPrimary text="To the broadcast" />
                     </Link>
