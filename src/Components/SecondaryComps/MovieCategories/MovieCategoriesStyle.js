@@ -20,7 +20,6 @@ export const Style = styled.div`
           border-radius: 20px;
         }
       }
-      /* font-size: 1.4rem; */
     }
   }
 `;

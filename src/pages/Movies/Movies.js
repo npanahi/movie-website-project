@@ -8,12 +8,13 @@ import imgBase from "../../helpers/globalVariables/img-path/imgBasePath";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
+import { usePageTitle } from "../../hooks/usePageTitle";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   const [genres, setGenres] = useState(null);
   const [currntPage, setCurentPage] = useState(1);
-  // const [metadata, setMetadata] = useState(null);
+  usePageTitle("Movies");
 
   useEffect(() => {
     getMoviesApi();

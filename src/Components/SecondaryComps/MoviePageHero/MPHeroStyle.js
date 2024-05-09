@@ -5,7 +5,7 @@ export const Style = styled.div`
       position: relative;
       width: 100%;
       height: 100vh;
-      min-height: 500px;
+      min-height: 50rem;
       margin: 0;
       padding: 0;
 
@@ -26,13 +26,11 @@ export const Style = styled.div`
         );
       }
       .logo {
-        width: 105px;
-        height: 40px;
+        width: 10.5rem;
+        height: 4rem;
         position: absolute;
         top: 5%;
         left: 5.2%;
-        img {
-        }
       }
     }
     .content {
@@ -53,8 +51,8 @@ export const Style = styled.div`
 
         .reting {
           position: relative;
-          width: 32px;
-          height: 32px;
+          width: 3.2rem;
+          height: 3.2rem;
           border: 2px dashed #909095;
           border-radius: 50%;
           color: #909095;
@@ -86,8 +84,8 @@ export const Style = styled.div`
   }
 
   .badge {
-    max-width: 280px;
-    max-height: 31px;
+    max-width: 28rem;
+    max-height: 3.1rem;
   }
   .actores {
     flex-grow: 2;

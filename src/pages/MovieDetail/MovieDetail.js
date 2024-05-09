@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Details from "../../Components/SecondaryComps/MovieDetails/Details/Details";
+import { usePageTitle } from "../../hooks/usePageTitle";
 export default function MovieDetail() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
@@ -17,9 +18,10 @@ export default function MovieDetail() {
   const [reviews, setReviews] = useState(null);
   const [similar, setSimilar] = useState(null);
   const [images, setImages] = useState(null);
-
   const [recommendations, setRecommendations] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [movieTitle, setMovieTitle] = useState("");
+  usePageTitle(movieTitle);
 
   useEffect(() => {
     getMovieApi();
@@ -35,6 +37,7 @@ export default function MovieDetail() {
       const res = await api.get(`movie/${id}`);
       setMovie(res.data);
       setLoading(false);
+      setMovieTitle(res.data.title);
       // console.log(res.data);
     } catch (e) {
       console.log(e);
@@ -197,7 +200,7 @@ export default function MovieDetail() {
       .map(({ backdrop_path, title, id: newId, poster_path }) => {
         if (poster_path === null) return "";
         return (
-          <li key={newId} className="col-5">
+          <li key={newId} className="col-5 ">
             <Link to={id !== newId ? `/movie/${newId}` : ""}>
               <img
                 alt={title}
@@ -256,7 +259,7 @@ export default function MovieDetail() {
           {similar.results.length > 0 ? (
             <div className="movie-similar">
               <h2>Similars</h2>
-              <ul className="similars flex-x">{renderSimilar()}</ul>
+              <ul className="similars flex-x ">{renderSimilar()}</ul>
             </div>
           ) : (
             ""
@@ -264,7 +267,7 @@ export default function MovieDetail() {
           {recommendations.results.length > 0 ? (
             <div className="movie-recommendations">
               <h2>Recommendations</h2>
-              <ul className="recommendations flex-x">
+              <ul className="recommendations flex-x ">
                 {renderRecommendations()}
               </ul>
             </div>

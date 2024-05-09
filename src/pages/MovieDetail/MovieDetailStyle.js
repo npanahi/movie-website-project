@@ -13,8 +13,8 @@ export const Style = styled.div`
       margin-bottom: 60px;
 
       li {
-        max-width: 150px;
-        height: 200px;
+        max-width: 15rem;
+        height: 20rem;
         text-align: center;
 
         .cast-img {
@@ -40,7 +40,7 @@ export const Style = styled.div`
   .movie-reviews {
     overflow: scroll;
     width: 100%;
-    max-height: 500px;
+    max-height: 50rem;
     position: relative;
     .review-title {
       text-align: start;
@@ -58,8 +58,8 @@ export const Style = styled.div`
         gap: 40px;
         margin-bottom: 20px;
         .avatar {
-          max-width: 100px;
-          height: 100px;
+          max-width: 10rem;
+          height: 10rem;
           border-radius: 50%;
           img {
             border-radius: 50%;
@@ -90,8 +90,8 @@ export const Style = styled.div`
       display: flex;
       gap: 10px;
       li {
-        max-width: 262px;
-        max-height: 400px;
+        max-width: 26.2rem;
+        max-height: 40rem;
 
         img {
           transition: all 0.3s;
@@ -111,8 +111,8 @@ export const Style = styled.div`
       gap: 10px;
 
       li {
-        max-width: 262px;
-        max-height: 400px;
+        max-width: 26.2rem;
+        max-height: 40rem;
 
         img {
           transition: all 0.3s;
@@ -134,6 +134,12 @@ export const Style = styled.div`
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       gap: 10px;
       margin-bottom: 40px;
+      @media (max-width: 650px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: 400px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
       img {
         border-radius: 15px;
       }
@@ -144,12 +150,11 @@ export const Style = styled.div`
     ul {
       justify-content: center;
       gap: 50px;
-      /* padding-bottom: 40px; */
       align-items: center;
       .companies {
         .img-wrapper {
           margin-top: 5px;
-          max-width: 100px;
+          max-width: 10rem;
           height: auto;
           img {
             box-shadow: 0 0 0;

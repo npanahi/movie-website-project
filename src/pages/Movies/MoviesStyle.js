@@ -6,6 +6,13 @@ export const Style = styled.div`
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 10px;
+      @media (max-width: 650px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: 400px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       li {
         .img-wrapper {
           position: relative;
@@ -30,8 +37,11 @@ export const Style = styled.div`
             }
           }
           img {
-            min-height: 400px;
+            min-height: 40rem;
             border-radius: 15px;
+            @media (max-width: 400px) {
+              min-height: 20rem;
+            }
           }
           .icon-wrapper {
             position: absolute;
@@ -65,7 +75,7 @@ export const Style = styled.div`
           }
           .num {
             color: #999999;
-            font-size: 40px;
+            font-size: 4rem;
             font-weight: 700;
             letter-spacing: 0;
           }

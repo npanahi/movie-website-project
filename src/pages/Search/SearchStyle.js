@@ -13,6 +13,12 @@ export const Style = styled.div`
       gap: 10px;
       row-gap: 25px;
       margin-bottom: 150px;
+      @media (max-width: 650px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @media (max-width: 400px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
       li {
         .img-wrapper {
           position: relative;
@@ -38,8 +44,11 @@ export const Style = styled.div`
             }
           }
           img {
-            min-height: 400px;
+            min-height: 40rem;
             border-radius: 15px;
+            @media (max-width: 400px) {
+              min-height: 20rem;
+            }
           }
           .icon-wrapper {
             position: absolute;
@@ -67,10 +76,16 @@ export const Style = styled.div`
     grid-template-columns: repeat(5, 1fr);
     gap: 15px;
     margin-bottom: 150px;
+    @media (max-width: 650px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 400px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
     li {
       .img-wrapper {
         position: relative;
-        height: 400px;
+        height: 40rem;
         border-radius: 15px;
         &::before {
           content: "";
@@ -93,8 +108,11 @@ export const Style = styled.div`
           }
         }
         img {
-          min-height: 400px;
+          max-height: 40rem;
           border-radius: 15px;
+          @media (max-width: 400px) {
+            min-height: 20rem;
+          }
         }
         .icon-wrapper {
           position: absolute;
@@ -119,7 +137,7 @@ export const Style = styled.div`
         font-size: 1.5rem;
         padding: 0 10px;
         margin-top: 15px;
-        font-size: 12px;
+        font-size: 1.2rem;
         color: #1f1f1f;
         line-height: 1.46667;
         font-weight: 600;

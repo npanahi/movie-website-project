@@ -11,8 +11,6 @@ export const Style = styled.div`
       border-radius: 15px;
       padding: 10px 20px 20px 20px;
       .over-wrapper {
-        .movie-title {
-        }
         .movie-genre {
           font-size: 1.2rem;
           font-weight: 400;
@@ -37,7 +35,7 @@ export const Style = styled.div`
             font-size: 1.2rem;
           }
           .badge {
-            max-width: 22px;
+            max-width: 2.2rem;
             height: auto;
           }
         }
@@ -46,7 +44,7 @@ export const Style = styled.div`
   }
   .imdb {
     img {
-      max-width: 50px;
+      max-width: 5rem;
       height: auto;
     }
   }

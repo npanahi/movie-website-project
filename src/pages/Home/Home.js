@@ -6,7 +6,6 @@ import { Style } from "./HomeStyle";
 import api from "../../helpers/baseApi/api";
 import { Collapse } from "antd";
 import { Link } from "react-router-dom";
-import ButtonPrimary from "../../Components/SecondaryComps/Buttons/ButtonPrimary/ButtonPri";
 
 export default function HomePage() {
   // MOVIE STATES

@@ -42,7 +42,7 @@ export const Style = styled.div`
   .description {
     .description-wrapper {
       max-width: 70%;
-      margin: 30px auto 0;
+      margin: 3rem auto 0;
       h1 {
         font-size: 5.1rem;
         font-weight: 600;
@@ -57,7 +57,7 @@ export const Style = styled.div`
       }
       .input {
         width: 90%;
-        height: 50px;
+        height: 5rem;
         border-radius: 0;
         font-size: 1.5rem;
         font-weight: 200;
@@ -72,7 +72,7 @@ export const Style = styled.div`
 
         &:placeholder {
           color: #757575;
-          font-size: 18px;
+          font-size: 1.8rem;
         }
         &:hover {
           border: 1px solid #d2d2d7;
@@ -81,15 +81,15 @@ export const Style = styled.div`
     }
 
     .people {
-      max-width: 980px;
-      max-height: 356px;
+      max-width: 98rem;
+      max-height: 35.6rem;
       margin: 40px 0 95px 5px;
     }
     p {
       font-size: 2.4rem;
       line-height: 1.25em;
-      margin-bottom: 40px;
-      margin-top: 24px;
+      margin-bottom: 4rem;
+      margin-top: 2.4rem;
       text-align: center;
       font-weight: 600;
     }
@@ -98,14 +98,14 @@ export const Style = styled.div`
         li {
           text-align: center;
           img {
-            width: 100px;
-            height: 100px;
+            width: 10rem;
+            height: 10rem;
           }
           div {
-            margin-top: 33px;
+            margin-top: 3.3rem;
             display: block;
             color: #1d1d1f;
-            font-size: 18px;
+            font-size: 1.8rem;
             word-break: break-word;
           }
         }
@@ -129,42 +129,42 @@ export const Style = styled.div`
   /* selected-tips */
   .selected-tips {
     .tips-wrapper {
-      max-width: 600px;
+      max-width: 60rem;
       margin: 0 auto;
 
       .title {
         text-align: center;
         h1 {
           font-size: 5.1rem;
-          line-height: 65px;
+          line-height: 6.5rem;
           padding-bottom: 32px;
           margin: 0;
         }
         p {
-          font-size: 22px;
+          font-size: 2.2rem;
           padding-bottom: 34px;
           margin: 0;
           font-weight: 400;
         }
       }
       .tips {
-        min-width: 440px;
+        min-width: 44rem;
         align-items: flex-start;
         justify-content: center;
         margin: 60px 0;
         .img-wrapper {
-          min-width: 130px;
-          height: 130px;
+          min-width: 13rem;
+          height: 13rem;
         }
         .text-wrapper {
           margin-left: 54px;
           h2 {
-            font-size: 22px;
-            line-height: 26px;
+            font-size: 2.2rem;
+            line-height: 2.6rem;
           }
           p {
-            font-size: 18px;
-            line-height: 24px;
+            font-size: 1.8rem;
+            line-height: 2.4rem;
             margin-bottom: 15px;
             font-weight: 400;
           }
@@ -178,14 +178,14 @@ export const Style = styled.div`
             }
             .level {
               color: #757575;
-              font-size: 12px;
+              font-size: 1.2rem;
               line-height: 1.33337;
               font-weight: 400;
               letter-spacing: -0.01em;
               margin-left: 16px;
               .lvl-img {
-                width: 19px;
-                height: 19px;
+                width: 1.9rem;
+                height: 1.9rem;
               }
             }
           }
@@ -199,36 +199,36 @@ export const Style = styled.div`
       margin-bottom: 70px;
       text-align: center;
       .img-wrapper {
-        width: 96px;
-        height: 85px;
+        width: 9.6rem;
+        height: 8.5rem;
         margin: 0 auto;
       }
       h1 {
         font-size: 5.1rem;
-        line-height: 65px;
-        padding-bottom: 32px;
+        line-height: 6.5rem;
+        padding-bottom: 3.2rem;
         margin: 0;
       }
     }
 
     .guide-box {
       background-color: #f5f5f7;
-      padding: 40px;
+      padding: 4rem;
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 3rem;
       ul {
         align-items: center;
 
         li {
           padding: 0 10px;
           .img-wrapper {
-            width: 45px;
-            height: 45px;
+            width: 4.5rem;
+            height: 4.5rem;
             margin: 0 auto;
           }
           .text-wrapper {
             font-size: 1.9rem;
-            margin-top: 20px;
+            margin-top: 2rem;
             font-weight: 600;
             color: #1d1d1f;
           }

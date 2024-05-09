@@ -4,14 +4,8 @@ export const Style = styled.div`
   color: #8d8d92;
   padding: 10px;
   font-size: 1.4rem;
-  height: 44px;
+  min-height: 4.4rem;
 
-  /* .open-tv {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    font-size: 12px;
-  } */
   .logo {
     font-size: 1.6rem;
     font-weight: 600;
@@ -25,10 +19,11 @@ export const Style = styled.div`
       color: #fff;
     }
     input {
+      width: 15rem;
       color: #fff;
       &::placeholder {
         color: #8d8d92;
-        font-size: 16px;
+        font-size: 1.6rem;
       }
       padding: 5px 0;
       padding-left: 25px;
@@ -43,7 +38,7 @@ export const Style = styled.div`
   }
   .NavLink {
     &:hover {
-      font-size: 20px;
+      font-size: 2rem;
     }
   }
 `;

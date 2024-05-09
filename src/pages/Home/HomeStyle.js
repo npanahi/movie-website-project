@@ -8,7 +8,7 @@ export const Style = styled.div`
       }
     }
     .title {
-      font-size: 60px;
+      font-size: 6rem;
       font-weight: 700;
     }
     p {
@@ -18,7 +18,7 @@ export const Style = styled.div`
     }
     .feature-logos {
       width: 100%;
-      height: 160px;
+      height: 16rem;
       margin: 0 auto;
       margin-top: 15px;
       /* margin-bottom: 80px; */
@@ -37,7 +37,7 @@ export const Style = styled.div`
         }
         svg {
           vertical-align: middle;
-          width: 10px;
+          width: 1rem;
         }
       }
       .iphone {
@@ -47,7 +47,7 @@ export const Style = styled.div`
           justify-content: center;
           li {
             width: 20%;
-            height: 100px;
+            height: 10rem;
             .caption {
               margin-top: 8px;
               font-size: 1.4rem;
@@ -83,7 +83,7 @@ export const Style = styled.div`
     color: #fff;
     padding: 35px 0;
     .subcribe-wrapper {
-      max-width: 960px;
+      max-width: 96rem;
       align-items: center;
       margin: 0 auto;
       gap: 40px;
@@ -91,8 +91,8 @@ export const Style = styled.div`
     .img-wrapper {
       img {
         flex-basis: 20%;
-        height: 38px;
-        min-width: 80px;
+        height: 3.8rem;
+        min-width: 8rem;
         color: #fff;
       }
     }
@@ -105,12 +105,12 @@ export const Style = styled.div`
     .sub-btn {
       background: #fff;
       border: 0;
-      height: 28px;
+      height: 2.8rem;
       min-width: 80%;
       border-radius: 4px;
       margin: 6px 0;
       padding: 0 35px;
-      font-size: 12px;
+      font-size: 1.2rem;
     }
     .learn-more {
       font-size: 1.1rem;

@@ -132,10 +132,6 @@ export default function MovieList(props) {
                       <div className="elip-container flex-x pointer ">
                         <div class="content ">Share</div>
                         <div className="share-icon">
-                          {/* <img
-                            src="assets/photos/iphone/share.svg"
-                            alt="icon"
-                          /> */}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 16 16"

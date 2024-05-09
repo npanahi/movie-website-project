@@ -1,8 +1,11 @@
 import styled from "styled-components";
 export const Style = styled.div`
-  Button {
-    min-width: 270px;
-    height: 48px;
+  button {
+    min-width: 27rem;
+    height: 4.8rem;
+    transition: all 0.5s;
+    border: 1px solid #000;
+
     &:hover {
       background-color: #fff;
       border: 1px solid #fff;

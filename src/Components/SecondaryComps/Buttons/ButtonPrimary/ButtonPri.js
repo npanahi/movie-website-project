@@ -5,7 +5,8 @@ export default function ButtonPrimary({ text }) {
     <Style>
       <div className="btn-primery">
         <span>
-          <Button size="large">{text}</Button>
+          {/* <Button size="large">{text}</Button> */}
+          <button>{text}</button>
         </span>
       </div>
     </Style>

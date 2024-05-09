@@ -7,7 +7,9 @@ import { Button, Input } from "antd";
 import { Style } from "./AboutUsStyle";
 import imgUrl from "../../helpers/globalVariables/img-path/bigImgUrl";
 import SecondaryHF from "../../Components/Layout/SecondaryHF/SecondaryHF";
+import { usePageTitle } from "../../hooks/usePageTitle";
 export default function AboutUS() {
+  usePageTitle("About Us");
   return (
     <Style>
       <SecondaryHF>
@@ -61,10 +63,12 @@ export default function AboutUS() {
                 <FontAwesomeIcon className="chev-r" icon={faChevronRight} />
               </div>
             </div>
-            <img
-              className="people"
-              src="https://communities.apple.com/de20240123/public/assets/home/home-1042.jpg"
-            />
+            <div className="people-img center-text">
+              <img
+                className="people"
+                src="https://communities.apple.com/de20240123/public/assets/home/home-1042.jpg"
+              />
+            </div>
             <p>Select your product to find suitable topics.</p>
           </div>
           <div className="product-list">

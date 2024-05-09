@@ -12,15 +12,21 @@ export const Style = styled.div`
 
           .image-wrapper {
             position: relative;
-            max-width: 262px;
-            min-height: 400px;
+            max-width: 26.2rem;
+            min-height: 40rem;
             img {
-              min-height: 400px;
+              min-height: 40rem;
+              @media (max-width: 700px) {
+                max-height: 20rem;
+              }
+              @media (max-width: 500px) {
+                max-height: 10rem;
+              }
             }
             .img-back {
               position: relative;
-              max-width: 262px;
-              min-height: 400px;
+              max-width: 26.2rem;
+              min-height: 40rem;
 
               &::before {
                 content: "";
@@ -57,19 +63,16 @@ export const Style = styled.div`
 
               &:hover {
                 background-color: #0b84ff;
-                /* .elip-text {
-                  opacity: 1;
-                } */
               }
               position: absolute;
-              font-size: 30px;
+              font-size: 3rem;
               right: 5%;
               bottom: 2%;
               color: #fff;
               opacity: 0;
               transition: all 0.5s;
-              width: 30px;
-              height: 30px;
+              width: 3rem;
+              height: 3rem;
               border-radius: 50%;
               text-align: center;
               .icon {
@@ -88,8 +91,8 @@ export const Style = styled.div`
                   border-radius: 5px;
                 }
                 .elip-container {
-                  width: 120px;
-                  height: 30px;
+                  width: 12rem;
+                  height: 3rem;
                   background-color: rgba(255, 255, 255, 0.8);
                   border: 1px solid #fff;
                   border-radius: 5px;
@@ -104,11 +107,11 @@ export const Style = styled.div`
                     margin: 0;
                   }
                   .share-icon {
-                    width: 20px;
-                    height: 40px;
+                    width: 2rem;
+                    height: 4rem;
                     svg {
-                      width: 15px;
-                      height: 15px;
+                      width: 1.5rem;
+                      height: 1.5rem;
                     }
                   }
                 }
@@ -120,8 +123,8 @@ export const Style = styled.div`
               left: 5%;
               bottom: -3%;
               .circle {
-                width: 45px;
-                height: 45px;
+                width: 4.5rem;
+                height: 4.5rem;
                 border-radius: 50%;
                 border: 1px solid #fff;
                 background-color: rgba(0, 0, 0, 0.5);
@@ -150,7 +153,7 @@ export const Style = styled.div`
           padding: 0 10px;
           .num {
             color: #999999;
-            font-size: 40px;
+            font-size: 4rem;
             font-weight: 700;
             letter-spacing: 0;
             line-height: 0.875;

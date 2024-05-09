@@ -12,13 +12,12 @@ export default function HeaderPri(props) {
         <div className="nav">
           <ul className=" flex-x gap-20 align-center">
             <li>
-              <div>
+              <div className="open_tv_logo">
                 <svg
                   height="24"
                   viewBox="0 0 96 96"
                   width="24"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="open_tv_logo"
                   aria-hidden="true"
                 >
                   <path
@@ -91,7 +90,7 @@ export default function HeaderPri(props) {
             onClick={() => {
               !props.query && navigate("/search");
             }}
-          ></input>
+          />
           <svg
             viewBox="0 0 30 30"
             height="25"

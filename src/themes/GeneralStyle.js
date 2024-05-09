@@ -452,10 +452,6 @@ img {
   margin-right:15px;
 }
 
-
-
-
-
 /*/ ///////////// position ///////////////*/
 .relative {
   position: relative;
@@ -480,11 +476,29 @@ img {
 
 }
 
-/* /////////////// numbers ///////////// */
-
 .main-title {
     font-size: 1.8rem;
   }
-
-`;
 /* /////////////// media ///////////// */
+
+  @media (max-width: 1120px) {
+    html{
+      font-size: 50%;
+    }
+  }
+  @media (max-width: 820px) {
+    html{
+      font-size: 37.5%;
+    }
+  }
+  @media (max-width: 650px) {
+    html{
+      font-size: 25%;
+    }
+  }
+  @media (max-width: 400px) {
+    html{
+      font-size: 20%;
+    }
+  }
+`;

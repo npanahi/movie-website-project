@@ -4,7 +4,7 @@ export const Style = styled.div`
   padding-bottom: 21px;
   .footer-wrapper {
     color: #888888;
-    font-size: 11px;
+    font-size: 1.1rem;
     line-height: 1.36364;
     font-weight: 400;
     a {
@@ -28,15 +28,15 @@ export const Style = styled.div`
             &:hover {
               color: #333;
             }
-            font-size: 18px;
+            font-size: 1.8rem;
           }
         }
 
         li {
           position: relative;
           &::before {
-            width: 8px;
-            height: 18px;
+            width: 0.8rem;
+            height: 1.8rem;
             background-size: 8px 18px;
             background-repeat: no-repeat;
             background-image: url(https://www.apple.com/ac/globalfooter/3/de_DE/assets/ac-footer/breadcrumbs/separator/icon_large.svg);

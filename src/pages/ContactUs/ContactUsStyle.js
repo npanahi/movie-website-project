@@ -27,8 +27,8 @@ export const Style = styled.div`
     justify-content: space-around;
     li {
       .img-wrapper {
-        width: 75px;
-        height: 75px;
+        width: 7.5rem;
+        height: 7.5rem;
       }
       .text {
         margin-top: 20px;
@@ -52,7 +52,7 @@ export const Style = styled.div`
   .suppport {
     h1 {
       text-align: center;
-      font-size: 64px;
+      font-size: 6.4rem;
       line-height: 1.0625;
       font-weight: 600;
       letter-spacing: -0.009em;
@@ -62,8 +62,8 @@ export const Style = styled.div`
         /* padding: 0 50px; */
         text-align: center;
         .img-wrapper {
-          width: 60px;
-          height: 60px;
+          width: 6rem;
+          height: 6rem;
           margin: 0 auto;
         }
       }
@@ -76,8 +76,8 @@ export const Style = styled.div`
       justify-content: center;
       margin-top: 50px;
       .img-wrapper {
-        width: 288px;
-        height: 183px;
+        width: 28.8rem;
+        height: 18.3rem;
         margin: 0 auto;
       }
       .text {
@@ -110,7 +110,7 @@ export const Style = styled.div`
     }
     .input {
       margin-bottom: 50px;
-      height: 50px;
+      height: 5rem;
       border-radius: 0;
       font-size: 1.5rem;
       font-weight: 200;
@@ -124,7 +124,7 @@ export const Style = styled.div`
       }
       &:placeholder {
         color: #757575;
-        font-size: 18px;
+        font-size: 1.8rem;
       }
       &:hover {
         border: 1px solid #d2d2d7;
@@ -142,7 +142,7 @@ export const Style = styled.div`
     padding-bottom: 21px;
     .footer-wrapper {
       color: #888888;
-      font-size: 11px;
+      font-size: 1.1rem;
       line-height: 1.36364;
       font-weight: 400;
       a {
@@ -167,16 +167,16 @@ export const Style = styled.div`
               &:hover {
                 color: #333;
               }
-              font-size: 20px;
+              font-size: 2rem;
             }
           }
 
           li {
             position: relative;
             &::before {
-              width: 8px;
-              height: 18px;
-              background-size: 8px 18px;
+              width: 0.8rem;
+              height: 1.8rem;
+              background-size: 0.8rem 1.8rem;
               background-repeat: no-repeat;
               background-image: url(https://www.apple.com/ac/globalfooter/3/de_DE/assets/ac-footer/breadcrumbs/separator/icon_large.svg);
               margin-right: 11px;

@@ -1,4 +1,3 @@
-import SecondaryHF from "../../Components/Layout/SecondaryHF/SecondaryHF";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
@@ -7,7 +6,11 @@ import {
 import { Style } from "./ContactUsStyle";
 import { Input } from "antd";
 import TernaryHF from "../../Components/Layout/TernaryHF/TernaryHF";
+import { usePageTitle } from "../../hooks/usePageTitle";
+
 export default function ContactUs() {
+  usePageTitle("Contact Us");
+
   return (
     <Style>
       <TernaryHF>

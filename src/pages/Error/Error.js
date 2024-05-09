@@ -1,6 +1,8 @@
 import PrimaryHeaderFooter from "../../Components/Layout/PrimaryHF/PrimaryHeaderFooter";
 import { Style } from "./ErrorStyle";
+import { usePageTitle } from "../../hooks/usePageTitle";
 export default function Error() {
+  usePageTitle("Error 404");
   return (
     <Style>
       <PrimaryHeaderFooter>

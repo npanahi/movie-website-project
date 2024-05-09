@@ -4,12 +4,12 @@ export const Style = styled.div`
     position: relative;
     width: 100%;
     height: 100vh;
-    min-height: 500px;
+    min-height: 50rem;
     margin: 0;
     padding: 0;
     .logo {
-      width: 105px;
-      height: 40px;
+      width: 10.5rem;
+      height: 4rem;
       position: absolute;
       top: 5%;
       left: 5.2%;
@@ -51,7 +51,6 @@ export const Style = styled.div`
       gap: 10px;
       .title {
         font-size: 3rem;
-        /* line-height: 1.33338; */
         letter-spacing: 1;
         margin: 0;
       }

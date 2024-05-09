@@ -8,7 +8,9 @@ import MovieCategories from "../../Components/SecondaryComps/MovieCategories/Mov
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useSearchParams, createSearchParams } from "react-router-dom";
+import { usePageTitle } from "../../hooks/usePageTitle";
 export default function SearchPach() {
+  usePageTitle("Search");
   const [movie, setMovie] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState(searchParams.get("q") || "");
