@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
 import formatTime from "../../../helpers/dateFormater/dateFormater";
 import shuffleArr from "../../../helpers/shuffle/shuffleArr";
+
 export default function MovieList(props) {
   const { movies, genres, title, className, showNumber, maxDate, series } =
     props;
@@ -124,7 +125,7 @@ export default function MovieList(props) {
                       onMouseLeave={onMouseLeave}
                       onClick={() =>
                         navigator.clipboard.writeText(
-                          `http://localhost:49917
+                          `http://localhost:3000
                         /movie/${id}`
                         )
                       }

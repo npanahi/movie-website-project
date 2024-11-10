@@ -1,12 +1,12 @@
-export default function formatTime(timestamp) {
+export default function formatTime(release_time) {
   const options = {
     year: "numeric",
     month: "short",
     day: "2-digit",
-
-    hour12: false,
   };
 
-  const date = new Date(timestamp);
-  return date.toLocaleDateString("en-GB", options);
+  const date = new Date(release_time);
+  const local = navigator.language;
+  //"en-GB"
+  return date.toLocaleDateString(local, options);
 }

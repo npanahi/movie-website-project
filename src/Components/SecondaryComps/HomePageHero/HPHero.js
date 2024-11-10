@@ -35,52 +35,35 @@ export default function HPHero({ movies, genres }) {
     console.log(movies);
     return movies.results
       .slice(0, 8)
-      .map(
-        (
-          {
-            overview,
-            name,
-            poster_path,
-            backdrop_path,
-            id,
-            title,
-            genre_ids,
-            tagline,
-            original_title,
-          },
-          i
-        ) => {
-          return (
-            <div key={id} style={contentStyle}>
-              <div className="hero-wrapper  relative">
-                <div className="background-wrapper ">
-                  <img alt={title} src={`${imgBase.orURL}${backdrop_path}`} />
-                  <div className="logo">
-                    <img
-                      className="logo-img "
-                      alt="logo"
-                      src="https://is1-ssl.mzstatic.com/image/thumb/oEYYIjc6-3zT0jgpyUiIaw/1x40at.png"
-                    />
-                  </div>
-                  <h2 className="title">{title}</h2>
+      .map(({ overview, backdrop_path, id, title, genre_ids }, i) => {
+        return (
+          <div key={id} style={contentStyle}>
+            <div className="hero-wrapper  relative">
+              <div className="background-wrapper ">
+                <img alt={title} src={`${imgBase.orURL}${backdrop_path}`} />
+                <div className="logo">
+                  <img
+                    className="logo-img "
+                    alt="logo"
+                    src="https://is1-ssl.mzstatic.com/image/thumb/oEYYIjc6-3zT0jgpyUiIaw/1x40at.png"
+                  />
                 </div>
-                <div className="container text-wrapper absolute">
-                  <div className="flex-box flex-y">
-                    <h2 className="title">{title}</h2>
-
-                    <div className="genres">{renderGenres(genre_ids)}</div>
-                    <div className="col-5 overview">{overview}</div>
-
-                    <Link className="i-b" to={`movie/${id}`}>
-                      <ButtonPrimary text="To the broadcast" />
-                    </Link>
-                  </div>
+                <h2 className="title">{title}</h2>
+              </div>
+              <div className="container text-wrapper absolute">
+                <div className="flex-box flex-y">
+                  <h2 className="title">{title}</h2>
+                  <div className="genres">{renderGenres(genre_ids)}</div>
+                  <div className="col-5 overview">{overview}</div>
+                  <Link className="i-b" to={`movie/${id}`}>
+                    <ButtonPrimary text="To the broadcast" />
+                  </Link>
                 </div>
               </div>
             </div>
-          );
-        }
-      );
+          </div>
+        );
+      });
   }
 
   return (

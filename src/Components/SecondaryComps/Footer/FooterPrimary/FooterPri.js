@@ -34,11 +34,11 @@ export default function FooterPri(props) {
               </a>
               <a
                 target="_blank"
-                href="https://www.apple.com/de/legal/privacy/de-ww/cookies/"
+                href="https://communities.apple.com/de/welcome"
                 rel="noopener noreferrer"
                 className="m-l-15"
               >
-                Cookie Policy
+                Apple comunity
               </a>
               <a
                 target="_blank"

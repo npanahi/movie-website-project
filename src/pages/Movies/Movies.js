@@ -9,22 +9,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import { useSearchParams, createSearchParams } from "react-router-dom";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);
   const [genres, setGenres] = useState(null);
   const [currntPage, setCurentPage] = useState(1);
+  const [searchParams, setSearchParams] = useSearchParams();
+  console.log(movies);
   usePageTitle("Movies");
 
   useEffect(() => {
     getMoviesApi();
     getGenreApi();
+    window.scrollTo(0, 0);
   }, [currntPage]);
 
   async function getMoviesApi() {
     try {
       const res = await api.get(
-        `trending/movie/day?language=en-US&page=${currntPage}`
+        // `trending/movie/day?language=en-US&page=${searchParams.get("page")}`
+        // `trending/movie/day?language=en-US&page=${currntPage}`
+        `movie/now_playing?language=en-US&page=${currntPage}`
       );
       const data = res.data;
       console.log(data);
@@ -103,7 +109,8 @@ export default function MoviesPage() {
             <ul className="movies">{renderMovies()}</ul>
             <div className="pagination center-text m-y-40">
               <Pagination
-                defaultCurrent={1}
+                // current={movies.page}
+                current={currntPage}
                 total={movies.total_pages}
                 onChange={onChange}
                 showSizeChanger={false}

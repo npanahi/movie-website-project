@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function Timer({ maximumDate }) {
+export default function Timer({ maximumDate }) {
   const [remainingTime, setRemainingTime] = useState({
     days: 0,
     hours: 0,
@@ -11,9 +11,11 @@ function Timer({ maximumDate }) {
   useEffect(() => {
     const calculateRemainingTime = () => {
       const maximumDateObj = new Date(maximumDate);
+      console.log(maximumDateObj);
       const currentDate = new Date();
 
       const timeDifference = maximumDateObj - currentDate;
+      console.log(timeDifference);
       const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
         (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -25,14 +27,13 @@ function Timer({ maximumDate }) {
 
       return { days, hours, minutes, seconds };
     };
-
-    const updateRemainingTime = () => {
-      const time = calculateRemainingTime();
-      setRemainingTime(time);
-    };
-
-    const timerInterval = setInterval(updateRemainingTime, 1000);
-
+    // const updateRemainingTime = () => {
+    //   // const time = calculateRemainingTime();
+    //   setRemainingTime(time);
+    // };
+    const timerInterval = setInterval(() => {
+      setRemainingTime(() => calculateRemainingTime());
+    }, 1000);
     return () => clearInterval(timerInterval);
   }, [maximumDate]);
 
@@ -45,5 +46,3 @@ function Timer({ maximumDate }) {
     </div>
   );
 }
-
-export default Timer;
