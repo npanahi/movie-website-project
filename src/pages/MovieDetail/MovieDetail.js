@@ -8,9 +8,10 @@ import MPHero from "../../Components/SecondaryComps/MoviePageHero/MPHero";
 import formatTime from "../../helpers/dateFormater/dateFormater";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import Details from "../../Components/SecondaryComps/MovieDetails/Details/Details";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import React from "react";
+
 export default function MovieDetail() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);

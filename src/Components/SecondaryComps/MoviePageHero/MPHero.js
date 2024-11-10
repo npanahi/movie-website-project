@@ -2,6 +2,7 @@ import ButtonPrimary from "../Buttons/ButtonPrimary/ButtonPri";
 import imgBase from "../../../helpers/globalVariables/img-path/imgBasePath";
 import timeGenerator from "../../../helpers/timers/timeGenerator";
 import { Style } from "./MPHeroStyle";
+import React from "react";
 
 export default function MPHero({ movie, casts }) {
   console.log(movie);

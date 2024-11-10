@@ -5,6 +5,8 @@ import {
   faMagnifyingGlass,
   faBagShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+
 export default function HeaderTer() {
   return (
     <Style>

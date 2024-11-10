@@ -10,6 +10,7 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import HPHero from "../../Components/SecondaryComps/HomePageHero/HPHero";
 import { usePageTitle } from "../../hooks/usePageTitle";
 import { useSearchParams, createSearchParams } from "react-router-dom";
+import React from "react";
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState(null);

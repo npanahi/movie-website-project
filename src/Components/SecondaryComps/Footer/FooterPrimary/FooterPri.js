@@ -1,4 +1,6 @@
 import { Style } from "./FooterPriStyle";
+import React from "react";
+
 export default function FooterPri(props) {
   return (
     <Style className={props.className}>

@@ -6,6 +6,7 @@ import Error from "../pages/Error/Error";
 import MovieDetail from "../pages/MovieDetail/MovieDetail";
 import MoviesPage from "../pages/Movies/Movies";
 import SearchPach from "../pages/Search/Search";
+import React from "react";
 
 export default function Router() {
   const router = createBrowserRouter([

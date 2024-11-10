@@ -1,4 +1,6 @@
 import { Style } from "./FooterSecStyle";
+import React from "react";
+
 export default function FooterSec() {
   return (
     <Style>

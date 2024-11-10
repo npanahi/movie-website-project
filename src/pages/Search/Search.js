@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { useSearchParams, createSearchParams } from "react-router-dom";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import React from "react";
+
 export default function SearchPach() {
   usePageTitle("Search");
   const [movie, setMovie] = useState(null);

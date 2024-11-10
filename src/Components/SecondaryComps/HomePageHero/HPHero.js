@@ -4,6 +4,7 @@ import { Style } from "./HPHeroStyle";
 import imgBase from "../../../helpers/globalVariables/img-path/imgBasePath";
 import { Link, useParams } from "react-router-dom";
 import { Carousel } from "antd";
+import React from "react";
 
 const contentStyle = {
   dots: false,

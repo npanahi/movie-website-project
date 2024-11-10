@@ -1,5 +1,6 @@
 import { Link, useParams, NavLink, useNavigate } from "react-router-dom";
 import { Style } from "./HeaderPriStyle";
+import React from "react";
 
 export default function HeaderPri(props) {
   const navigate = useNavigate();

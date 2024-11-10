@@ -1,11 +1,12 @@
-import { React, Fragment } from "react";
-import ReactDOM from "react-dom/client";
+import React, { Fragment } from "react";
 import reportWebVitals from "./reportWebVitals";
 import Router from "./Components/Router";
 import { GeneralStyle } from "./themes/GeneralStyle";
 import { ConfigProvider } from "antd";
+import { createRoot } from "react-dom/client";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootContainer = document.getElementById("root");
+const root = createRoot(rootContainer);
 root.render(
   <Fragment>
     <ConfigProvider

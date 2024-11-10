@@ -1,6 +1,8 @@
 import FooterPri from "../../SecondaryComps/Footer/FooterPrimary/FooterPri";
 import HeaderPri from "../../SecondaryComps/Header/HeaderPrimary/HeaderPri";
 import { Style } from "./PrimaryHFStyle";
+import React from "react";
+
 export default function PrimaryHeaderFooter(props) {
   return (
     <Style>

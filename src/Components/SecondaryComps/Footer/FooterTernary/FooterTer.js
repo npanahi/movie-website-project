@@ -1,4 +1,6 @@
 import { Style } from "./FooterTerStyle";
+import React from "react";
+
 export default function FooterTer() {
   return (
     <Style>

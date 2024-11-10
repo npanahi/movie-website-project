@@ -8,6 +8,8 @@ import { Style } from "./AboutUsStyle";
 import imgUrl from "../../helpers/globalVariables/img-path/bigImgUrl";
 import SecondaryHF from "../../Components/Layout/SecondaryHF/SecondaryHF";
 import { usePageTitle } from "../../hooks/usePageTitle";
+import React from "react";
+
 export default function AboutUS() {
   usePageTitle("About Us");
   return (

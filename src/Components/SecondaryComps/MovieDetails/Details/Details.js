@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-
 import api from "../../../../helpers/baseApi/api";
 import { useEffect, useState } from "react";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import timeGenerator from "../../../../helpers/timers/timeGenerator";
 import { Style } from "./DetailsStyle";
+import React from "react";
+
 export default function Details() {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
